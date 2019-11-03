@@ -1,0 +1,21 @@
+.Search-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.Search-box span {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.Search-box img {
+  margin-left: 5px;
+}
+
+.Search-field {
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  margin-left: 5px;
+}

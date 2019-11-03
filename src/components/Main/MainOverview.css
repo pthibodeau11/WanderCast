@@ -1,0 +1,61 @@
+.Main-overview {
+  width: 100%;
+  height: 700px;
+  position: top;
+  margin-top: 30px;
+  background-image: url("../../background_landing.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: bottom center;
+  background-size: cover;
+}
+
+.Main-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  height: 100%;
+  width: 685px;
+  margin: 0;
+}
+
+.Main-text h1 {
+  font-size: 45px;
+  line-height: 2.9rem;
+  padding-bottom: 15px;
+}
+
+.Main-text p {
+  font-size: 20px;
+  padding-bottom: 10px;
+  color: #045da5;
+  font-weight: 400;
+}
+
+.Main-text h1,
+p {
+  margin: 0 0 0 60px;
+}
+
+.Main-button {
+  border-radius: 50px;
+  padding: 13px;
+  color: white;
+  background: #f94659;
+  width: 210px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 300;
+  border: none;
+  box-shadow: 5px 5px 5px -5px rgb(0, 0, 0, 0.56);
+  cursor: pointer;
+}
+
+.Tech-icons {
+  margin: 0 auto;
+}

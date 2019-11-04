@@ -17,8 +17,11 @@ export default class Header extends Component {
         <img src={mainlogo} alt="logo" />
         <ul className="Nav-links">
           <li className="Nav-link">Become a Streamer</li>
+          <li className="Nav-link">New request</li>
+          <li className="Nav-link">Manage streams</li>
           <li className="Nav-link">Sign Up</li>
           <li className="Nav-link">Login</li>
+          <li className="Nav-link">Profile</li>
         </ul>
       </div>
     );

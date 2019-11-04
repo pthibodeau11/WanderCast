@@ -45,6 +45,7 @@ app.get(`/auth/user/`, auth.usersOnly, userController.viewProfile); // this will
 
 // // APPLICATION ENDPOINTS
 app.get(`/api/app`, auth.adminsOnly, appController.getAllApps); // only admins can view all apps
+app.get(`/api/app/pending`, auth.adminsOnly, appController.getPendingApps); // shows pending approval apps
 app.post(`/api/app`, auth.usersOnly, appController.createApp); // only users create new application
 // app.put(`/api/app/approve/:appId`, appController.approve); // admin will change user status to streamer and then delete application
 // app.put(`/api/app/decline/:appId`, appController.decline) // admin will NOT change user status to streamer and then delete application

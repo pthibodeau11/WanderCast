@@ -3,6 +3,10 @@ module.exports = {
     const allApps = await req.app.get("db").apps.get_all_apps();
     return res.status(200).send(allApps);
   },
+  getPendingApps: async (req, res) => {
+    const pending = await req.app.get("db").apps.get_pending_apps();
+    return res.status(200).send(pending);
+  },
   createApp: async (req, res) => {
     const { userId } = req.session.user;
     const {

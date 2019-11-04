@@ -25,6 +25,8 @@
   font-size: 45px;
   line-height: 2.9rem;
   padding-bottom: 15px;
+  margin-left: 60px;
+  margin-bottom: 0;
 }
 
 .Main-text p {
@@ -34,9 +36,8 @@
   font-weight: 400;
 }
 
-.Main-text h1,
-p {
-  margin: 0 0 0 60px;
+.Main-sub-text {
+  margin-left: 60px;
 }
 
 .Main-button {
@@ -57,5 +58,7 @@ p {
 }
 
 .Tech-icons {
-  margin: 0 auto;
+  width: 100%;
+  margin-left: 0;
+  text-align: center;
 }

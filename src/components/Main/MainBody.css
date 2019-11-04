@@ -1,0 +1,27 @@
+.Differentiators {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.Diff-box {
+  width: 250px;
+}
+
+.Diff-box h1,
+p {
+  margin: 0;
+}
+
+.Partner-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

@@ -51,24 +51,28 @@ app.post(`/api/app`, auth.usersOnly, appController.createApp); // only users cre
 // app.put(`/api/app/decline/:appId`, appController.decline) // admin will NOT change user status to streamer and then delete application
 
 // // STREAM ENDPOINTS
-// app.get(`/api/stream`, streamController.getAll); // get list of all streams
-// app.get(`/api/streams/:streamId`, streamController.getOne); //get one stream
-// app.get(`/api/streams/:userId`, streamController.getAllPending) // get all created streams by user that are pending approval
-// app.get(`/api/streams/:userId`, streamController.getAllApproved) // get all created streams by user that are approved
-// app.post(`/api/streams`, streamController.createStream) // user creates stream
+// prettier-ignore
+app.get(`/api/streams/pending`, auth.usersOnly, streamController.getPendingStreams); // get all created streams by user that are pending approval
+// prettier-ignore
+app.get(`/api/streams/approved`, auth.usersOnly, streamController.getApprovedStreams); // get all created streams by user that are approved
+app.get(`/api/stream`, auth.adminsOnly, streamController.getAllStreams); // get list of all streams
+// prettier-ignore
+app.get(`/api/streams/:streamId`, auth.adminsOnly, streamController.getOneStream); //get one stream
+app.post(`/api/streams`, auth.usersOnly, streamController.createStream); // user creates stream
 // app.put(`/api/streams/:streamId`, streamController.editStream) // user edits stream they created
 // app.delete(`/api/streams/:streamId`, streamController.deleteStream) // user can delete stream not yet matched
 
 // // PURCHASES ENDPOINTS
-// app.get(`/api/purchases`, purchController.getAllAdmin) // admin sees all purchases
-// app.get(`/api/purchases/:userId`, purchController.getAll) // get list of all purchased streams by user
+// prettier-ignore
+app.get(`/api/purchases/user`, auth.usersOnly, purchController.getUserPurchases) // get list of all purchased streams by user
+app.get(`/api/purchases`, auth.adminsOnly, purchController.getAllPurchases); // admin sees all purchases
 // app.post(`/api/purchases`, purchController.purchase) // buy one ticket
 
 // // REVIEWS ENDPOINTS
 // app.post(`/api/reviews`, reviewController.add); //user can add review
-// app.get(`/api/reviews/:eventId`, reviewController.getAll); // get reviews for an event
-// app.put(`/api/reviews/:eventId/:reviewId`, reviewController.edit); // user can edit their review
-// app.delete(`/api/reviews/:eventId/:reviewId`, reviewController.delete); // user or admin can delete review
+// app.get(`/api/reviews/:streamerId`, reviewController.getAll); // get reviews for an streamer
+// app.put(`/api/reviews/:streamerId/:reviewId`, reviewController.edit); // user can edit their review
+// app.delete(`/api/reviews/:streamerId/:reviewId`, reviewController.delete); // user or admin can delete review
 
 app.listen(SERVER_PORT, () =>
   console.log(`Server listening on ${SERVER_PORT}`)

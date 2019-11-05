@@ -1,0 +1,17 @@
+.Viewstream-background {
+  width: 100%;
+  height: 700px;
+  margin-top: 30px;
+  background-image: url("../../plain_background_landing.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: bottom center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Viewstream-container {
+  z-index: 10000;
+}

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Footer from "../Footer/Footer";
 import "./MainBody.css";
 
 export default class MainBody extends Component {
@@ -34,10 +33,6 @@ export default class MainBody extends Component {
           <h1>Logo #3</h1>
           <h1>Logo #4</h1>
           <h1>Logo #5</h1>
-        </div>
-
-        <div className="Footer">
-          <Footer />
         </div>
       </>
     );

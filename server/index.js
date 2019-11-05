@@ -52,7 +52,7 @@ app.post(`/api/app`, auth.usersOnly, appController.createApp); // only users cre
 
 // // STREAM ENDPOINTS
 // prettier-ignore
-app.get(`/api/streams/pending`, auth.usersOnly, streamController.getPendingStreams); // get all created streams by user that are pending approval
+app.get(`/api/streams/pending`, auth.usersOnly, streamController.getPendingStreams); // streams by user that are pending approval
 // prettier-ignore
 app.get(`/api/streams/approved`, auth.usersOnly, streamController.getApprovedStreams); // get all created streams by user that are approved
 app.get(`/api/stream`, auth.adminsOnly, streamController.getAllStreams); // get list of all streams

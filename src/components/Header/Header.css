@@ -21,9 +21,7 @@
 }
 
 .Main-header-logo {
-  position: absolute;
-  left: 42%;
-  right: 45%;
+  margin-left: 35px;
 }
 
 img {
@@ -60,6 +58,7 @@ img {
 .Nav-link {
   margin-right: 30px;
   padding-bottom: 15px;
+  text-decoration: none;
 }
 
 .Nav-link:hover {

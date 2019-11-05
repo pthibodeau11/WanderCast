@@ -9,18 +9,22 @@ import Search from "../Search/Search";
 
 function Header(props) {
   const { userId } = props;
+  const { isAdmin } = props;
+  console.log(props);
 
   return (
     <div className="Nav-bar">
-      <div className="Search-bar">
+      {/* <div className="Search-bar">
         <img src={logo} alt="Logo" />
         <div className="Search-component">
           <Search />
         </div>
-      </div>
-      <img className="Main-header-logo" src={mainlogo} alt="logo" />
+      </div> */}
+      <Link to={"/"}>
+        <img className="Main-header-logo" src={mainlogo} alt="logo" />
+      </Link>
       <ul className="Nav-links">
-        {userId ? (
+        {isAdmin ? (
           <>
             <Link to={"/newapplication"}>
               <li className="Nav-link">Become a Streamer</li>
@@ -29,13 +33,36 @@ function Header(props) {
               <li className="Nav-link">New request</li>
             </Link>
             <Link to={"/mystreams"}>
-              <li className="Nav-link">Manage streams</li>
+              <li className="Nav-link">My streams</li>
             </Link>
             <Link to={"/profile"}>
               <li className="Nav-link">Profile</li>
             </Link>
             <Link to={"/admin"}>
               <li className="Nav-link">Admin</li>
+            </Link>
+            <li
+              className="Nav-link"
+              onClick={() => {
+                props.logoutUser().then(() => props.history.push("/"));
+              }}
+            >
+              Logout
+            </li>
+          </>
+        ) : userId ? (
+          <>
+            <Link to={"/newapplication"}>
+              <li className="Nav-link">Become a Streamer</li>
+            </Link>
+            <Link to={"/newstream"}>
+              <li className="Nav-link">New request</li>
+            </Link>
+            <Link to={"/mystreams"}>
+              <li className="Nav-link">My streams</li>
+            </Link>
+            <Link to={"/profile"}>
+              <li className="Nav-link">Profile</li>
             </Link>
             <li
               className="Nav-link"
@@ -63,7 +90,8 @@ function Header(props) {
 
 const mapStateToProps = reduxState => {
   return {
-    userId: reduxState.userReducer.userId
+    userId: reduxState.authReducer.userId,
+    isAdmin: reduxState.authReducer.isAdmin
   };
 };
 

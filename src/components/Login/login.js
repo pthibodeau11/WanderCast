@@ -23,7 +23,8 @@ class login extends Component {
   };
 
   render() {
-    if (this.props.userId) return <Redirect to="/mystreams" />;
+    console.log(this.props.userId);
+    if (this.props.userId) return <Redirect to="/" />;
 
     return (
       <>
@@ -35,7 +36,11 @@ class login extends Component {
             <br />
             <br />
             <label>Password</label>
-            <input name="user_password" onChange={this.handleInput} />
+            <input
+              type="password"
+              name="user_password"
+              onChange={this.handleInput}
+            />
             <button name="login" onClick={this.handleSubmit}>
               Log In
             </button>

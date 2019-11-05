@@ -42,7 +42,7 @@ module.exports = {
     }
   },
   login: async (req, res) => {
-    const { user_email, password } = req.body;
+    const { user_email, user_password } = req.body;
     const db = req.app.get("db");
 
     const foundUser = await db.auth.check_existing_user(user_email);
@@ -50,7 +50,10 @@ module.exports = {
     if (!foundUser[0]) {
       res.status(403).json({ message: "User not found" });
     } else {
-      const isAuthenticated = bcrypt.compareSync(password, foundUser[0].hash);
+      const isAuthenticated = bcrypt.compareSync(
+        user_password,
+        foundUser[0].hash
+      );
       console.log(foundUser);
 
       if (!isAuthenticated) {

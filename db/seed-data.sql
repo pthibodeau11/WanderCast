@@ -51,6 +51,15 @@ VALUES (
     '2019-12-24', '2019-12-24 08:00:00', '1', 'event', 'United States', '1717 N Harwood St', 'Dallas', 'TX', 75201, 'true'
 )
 
+UPDATE streams
+SET 
+stream_price = 150,
+stream_img = 'no image',
+stream_live_link = 'live link goes here',
+stream_video_link = 'recorded link goes here',
+stream_equipment = 'will be using super awesome equipment'
+WHERE stream_id = 8
+
 -- jUST TESTING 
 
 INSERT INTO purchases (

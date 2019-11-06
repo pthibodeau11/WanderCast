@@ -19,10 +19,22 @@ module.exports = {
     const oneUser = await req.app.get("db").users.get_one_user(userId);
 
     return res.status(200).send(oneUser);
-  }
-  // editUser: async (req, res) => {
+  },
 
-  // },
+  editProfile: async (req, res) => {
+    const { user_first_name, user_last_name, user_birth_date } = req.body;
+    const { userId } = req.session.user;
+    const oneUser = await req.app
+      .get("db")
+      .users.edit_profile([
+        userId,
+        user_first_name,
+        user_last_name,
+        user_birth_date
+      ]);
+
+    res.status(200).json(oneUser);
+  }
   // editUserAdmin: async (req, res) => {
 
   // }

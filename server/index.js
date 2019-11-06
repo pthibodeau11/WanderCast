@@ -43,7 +43,7 @@ app.get(`/admin/user/streamers`, auth.adminsOnly, userController.getAllStreamers
 app.get(`/admin/user/:userId`, auth.adminsOnly, userController.getOneUser); // this will be for admins to view single user profile
 app.get(`/auth/user/`, auth.usersOnly, userController.viewProfile); // this will be for users to view their profile based on session
 // app.put(`/admin/user/edit/:userId`, adminsOnly, userController.editUserAdmin) // admin can edit status of users
-// app.put(`/auth/user/edit/:userId`, usersOnly, userController.editUser); // edit user info/status in user profile OR admin page
+app.put(`/auth/user/edit/`, auth.usersOnly, userController.editProfile); // for user to edit profile info on session
 
 // // APPLICATION ENDPOINTS
 app.get(`/api/app`, auth.adminsOnly, appController.getAllApps); // only admins can view all apps

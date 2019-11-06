@@ -5,7 +5,7 @@
   background-image: url("../../plain_background_landing.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: bottom center;
+  background-position: center center;
   background-size: cover;
   display: flex;
   flex-direction: column;

@@ -10,6 +10,7 @@ const GET_ALL = "GET_ALL";
 const GET_ALL_STREAMERS = "GET_ALL_STREAMERS";
 const GET_ONE = "GET_ONE";
 const VIEW_PROFILE = "VIEW_PROFILE";
+const EDIT_PROFILE = "EDIT_PROFILE";
 
 export function getAllUsers() {
   return {
@@ -39,6 +40,13 @@ export function viewProfile() {
   };
 }
 
+export function editProfile(editedProfile) {
+  return {
+    type: EDIT_PROFILE,
+    payload: axios.put(`/auth/user/edit`, editedProfile)
+  };
+}
+
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
@@ -59,6 +67,12 @@ export default function reducer(state = initialState, action) {
         user: payload.data
       };
     case `${VIEW_PROFILE}_FULFILLED`:
+      console.log(payload);
+      return {
+        ...state,
+        user: payload.data
+      };
+    case `${EDIT_PROFILE}_FULFILLED`:
       console.log(payload);
       return {
         ...state,

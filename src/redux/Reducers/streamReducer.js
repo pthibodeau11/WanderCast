@@ -51,23 +51,23 @@ export default function reducer(state = initialState, action) {
   switch (type) {
     case `${CREATE_STREAM}_FULFILLED`:
       return {
-        reviews: payload.data
+        streams: payload.data
       };
     case `${GET_ALL_STREAMS}_FULFILLED`:
       return {
-        reviews: payload.data
+        streams: payload.data
       };
     case `${GET_ONE_STREAM}_FULFILLED`:
       return {
-        reviews: payload.data
+        streams: payload.data
       };
     case `${GET_PENDING_STREAMS}_FULFILLED`:
       return {
-        reviews: payload.data
+        streams: payload.data
       };
     case `${GET_APPROVED_STREAMS}_FULFILLED`:
       return {
-        reviews: payload.data
+        streams: payload.data
       };
     default:
       return state;

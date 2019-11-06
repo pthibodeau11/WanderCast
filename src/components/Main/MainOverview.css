@@ -62,3 +62,14 @@
   margin-left: 0;
   text-align: center;
 }
+
+@media (max-width: 1450px) {
+  .Main-overview {
+    background-image: url("../../plain_background_landing.jpg");
+    display: flex;
+    justify-content: center;
+  }
+  .Main-text {
+    text-align: center;
+  }
+}

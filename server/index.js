@@ -38,6 +38,8 @@ app.post(`/auth/user/logout`, authController.logout); //logout
 
 // // USER ENDPOINTS
 app.get(`/admin/user/list`, auth.adminsOnly, userController.getAllUsers); // returning all users for admin page
+// prettier-ignore
+app.get(`/admin/user/streamers`, auth.adminsOnly, userController.getAllStreamers) // INNER JOIN returns all streamers for admin page
 app.get(`/admin/user/:userId`, auth.adminsOnly, userController.getOneUser); // this will be for admins to view single user profile
 app.get(`/auth/user/`, auth.usersOnly, userController.viewProfile); // this will be for users to view their profile based on session
 // app.put(`/admin/user/edit/:userId`, adminsOnly, userController.editUserAdmin) // admin can edit status of users

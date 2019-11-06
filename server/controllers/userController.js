@@ -3,6 +3,10 @@ module.exports = {
     const allUsers = await req.app.get("db").users.get_all_users();
     return res.status(200).send(allUsers);
   },
+  getAllStreamers: async (req, res) => {
+    const allStreamers = await req.app.get("db").users.get_all_streamers();
+    return res.status(200).send(allStreamers);
+  },
   getOneUser: async (req, res) => {
     const userId = +req.params.userId;
     const oneUser = await req.app.get("db").users.get_one_user(userId);

@@ -27,11 +27,11 @@ export default function reducer(state = initialState, action) {
   switch (type) {
     case `${GET_ALL_PURCHASES}_FULFILLED`:
       return {
-        reviews: payload.data
+        purchases: payload.data
       };
     case `${GET_USER_PURCHASES}_FULFILLED`:
       return {
-        reviews: payload.data
+        purchases: payload.data
       };
     default:
       return state;

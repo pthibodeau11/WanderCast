@@ -4,6 +4,7 @@ import Main from "./components/Main/Main";
 import Signup from "./components/Signup/signup";
 import Login from "./components/Login/login";
 import Profile from "./components/Profile/profile";
+import AlterProfile from "./components/Profile/AlterProfile";
 import NewApplication from "./components/NewApplication/newapplication";
 import ViewApplication from "./components/ViewApplication/viewapplication";
 import NewStream from "./components/NewStream/newstream";
@@ -17,6 +18,7 @@ export default (
     <Route component={Signup} path="/signup" />
     <Route component={Login} path="/login" />
     <Route component={Profile} path="/profile" />
+    <Route component={AlterProfile} path="/profile/edit" />
     <Route component={NewApplication} path="/newapplication" />
     <Route component={ViewApplication} path="/viewapplication" />
     <Route component={NewStream} path="/newstream" />

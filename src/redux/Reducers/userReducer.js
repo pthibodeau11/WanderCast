@@ -35,7 +35,7 @@ export function getOneUser(userId) {
 export function viewProfile() {
   return {
     type: VIEW_PROFILE,
-    payload: axios.get(`/admin/user/`)
+    payload: axios.get(`/auth/user/`)
   };
 }
 
@@ -59,6 +59,7 @@ export default function reducer(state = initialState, action) {
         user: payload.data
       };
     case `${VIEW_PROFILE}_FULFILLED`:
+      console.log(payload);
       return {
         ...state,
         user: payload.data

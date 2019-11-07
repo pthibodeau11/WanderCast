@@ -13,7 +13,9 @@ module.exports = {
       user_bio,
       user_experience,
       user_equipment,
-      user_availability
+      user_availability,
+      user_portfolio_link,
+      user_resume_link
     } = req.body;
 
     const newApp = await req.app
@@ -24,6 +26,8 @@ module.exports = {
         user_experience,
         user_equipment,
         user_availability,
+        user_portfolio_link,
+        user_resume_link,
         "false",
         "false"
       );

@@ -14,4 +14,38 @@
 
 .Newstream-container {
   z-index: 10000;
+  width: 75%;
+}
+
+.Newstream-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.Newstream-field input {
+  width: 175px;
+}
+
+.Newstream-location-fields {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+.Newstream-hours {
+  display: flex;
+  flex-direction: row;
+}
+
+.Newstream-hours input {
+  width: 30px;
+}
+
+.Newstream-location-fields input {
+  margin-top: 10px;
+  width: 150px;
 }

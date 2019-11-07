@@ -30,8 +30,8 @@ class mystreams extends Component {
         );
       });
     const approvedMapped =
-      this.props.streams &&
-      this.props.streams.map(approved => {
+      this.props.approved &&
+      this.props.approved.map(approved => {
         return (
           <ul className="Mystreams-box">
             <li className="Mystreams-box-row">{approved.stream_title}</li>
@@ -44,8 +44,8 @@ class mystreams extends Component {
         );
       });
     const pendingMapped =
-      this.props.streams &&
-      this.props.streams.map(pending => {
+      this.props.pending &&
+      this.props.pending.map(pending => {
         return (
           <ul className="Mystreams-box">
             <li className="Mystreams-box-row">{pending.stream_title}</li>
@@ -83,7 +83,8 @@ class mystreams extends Component {
 const mapStateToProps = reduxState => {
   return {
     purchases: reduxState.purchReducer.purchases,
-    streams: reduxState.streamReducer.streams
+    approved: reduxState.streamReducer.approved,
+    pending: reduxState.streamReducer.pending
   };
 };
 

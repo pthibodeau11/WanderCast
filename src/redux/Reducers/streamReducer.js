@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const initialState = {
-  streams: [],
+  streams: { approved: [], pending: [] },
   stream: {}
 };
 
@@ -11,7 +11,7 @@ const GET_ONE_STREAM = "GET_ONE_STREAM";
 const GET_PENDING_STREAMS = "GET_PENDING_STREAMS";
 const GET_APPROVED_STREAMS = "GET_APPROVED_STREAMS";
 
-export function createApp(newStream) {
+export function createStream(newStream) {
   return {
     type: CREATE_STREAM,
     payload: axios.post("/api/streams", newStream)
@@ -63,11 +63,11 @@ export default function reducer(state = initialState, action) {
       };
     case `${GET_PENDING_STREAMS}_FULFILLED`:
       return {
-        streams: payload.data
+        pending: payload.data
       };
     case `${GET_APPROVED_STREAMS}_FULFILLED`:
       return {
-        streams: payload.data
+        approved: payload.data
       };
     default:
       return state;

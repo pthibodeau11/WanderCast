@@ -26,6 +26,7 @@ class AlterProfile extends Component {
       user_last_name,
       user_birth_date
     });
+    alert("profile updated!");
   };
 
   render() {

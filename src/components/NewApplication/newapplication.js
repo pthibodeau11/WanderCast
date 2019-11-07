@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./newapplication.css";
 import { connect } from "react-redux";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { createApp } from "../../redux/Reducers/appReducer";
 
 class newapplication extends Component {
@@ -19,6 +19,7 @@ class newapplication extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.createApp(this.state);
+    alert("submitted!");
   };
   render() {
     return (

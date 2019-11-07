@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./profile.css";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { viewProfile } from "../../redux/Reducers/userReducer";
 
@@ -34,7 +35,9 @@ class profile extends Component {
               </li>
               <label>Streamer Status: </label>
               <li>{streamer}</li>
-              <button>Edit info</button>
+              <Link to="/profile/edit">
+                <button>Edit info</button>
+              </Link>
             </div>
             <div className="Profile-image">
               <label>Profile pic</label>

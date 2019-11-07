@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./AlterProfile.css";
 import { connect } from "react-redux";
-import { editProfile } from "../../redux/Reducers/userReducer";
+import { Link } from "react-router-dom";
+import { editProfile, viewProfile } from "../../redux/Reducers/userReducer";
 
 class AlterProfile extends Component {
   state = {
@@ -10,38 +11,56 @@ class AlterProfile extends Component {
     user_birth_date: ""
   };
 
+  componentDidMount() {
+    this.props.viewProfile();
+  }
+
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
   handleEditSubmit = () => {
-    const { userId } = this.props;
-
-    this.props.editProfile([
-      userId,
+    const { user_first_name, user_last_name, user_birth_date } = this.state;
+    this.props.editProfile({
       user_first_name,
       user_last_name,
       user_birth_date
-    ]);
+    });
   };
 
   render() {
     return (
       <>
         <div className="AlterProfile-background">
-          <input name="user_first_name" onChange={this.handleInput} />
+          <label>Enter New First Name:</label>
+          <input
+            name="user_first_name"
+            onChange={this.handleInput}
+            // value={this.props.user[0].user_first_name}
+          />
+          <label>Enter New Last Name:</label>
           <input name="user_last_name" onChange={this.handleInput} />
+          <label>Enter New Birth Date</label>
           <input name="user_birth_date" onChange={this.handleInput} />
-          <button onClick={this.handleEditSubmit}>Submit Changes</button>
+          <Link to="/profile">
+            <button onClick={this.handleEditSubmit}>Submit Changes</button>
+          </Link>
         </div>
       </>
     );
   }
 }
 
+const mapStateToProps = reduxState => {
+  return {
+    user: reduxState.userReducer.user
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   {
-    editProfile
+    editProfile,
+    viewProfile
   }
 )(AlterProfile);

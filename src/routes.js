@@ -17,8 +17,8 @@ export default (
     <Route component={Main} exact path="/" />
     <Route component={Signup} path="/signup" />
     <Route component={Login} path="/login" />
-    <Route component={Profile} path="/profile" />
     <Route component={AlterProfile} path="/profile/edit" />
+    <Route component={Profile} path="/profile" />
     <Route component={NewApplication} path="/newapplication" />
     <Route component={ViewApplication} path="/viewapplication" />
     <Route component={NewStream} path="/newstream" />

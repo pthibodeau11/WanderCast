@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./MainOverview.css";
+import { Link } from "react-router-dom";
 
 export default class MainOverview extends Component {
   render() {
@@ -16,7 +17,11 @@ export default class MainOverview extends Component {
             request, and our team will send a streamer the location of your
             choice.
           </p>
-          <button className="Main-button">GET STARTED</button>
+          <div className="Main-button-box">
+            <Link to="/signup">
+              <button className="Main-button">GET STARTED</button>
+            </Link>
+          </div>
           <p></p>
           <p className="Tech-icons"> 4K | LIVE | Facebook | 360 | VR </p>
         </section>

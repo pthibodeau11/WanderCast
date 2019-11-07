@@ -60,6 +60,9 @@ class newapplication extends Component {
                 Submit Application
               </button>
             </Link>
+            <Link to="/mystreams">
+              <button>Cancel</button>
+            </Link>
           </div>
         </div>
       </>

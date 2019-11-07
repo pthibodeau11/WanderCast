@@ -110,6 +110,9 @@ class newstream extends Component {
                 Submit Stream Request
               </button>
             </Link>
+            <Link to="/mystreams">
+              <button>Cancel</button>
+            </Link>
           </div>
         </div>
       </>

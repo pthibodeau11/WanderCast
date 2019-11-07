@@ -46,6 +46,9 @@ class AlterProfile extends Component {
           <Link to="/profile">
             <button onClick={this.handleEditSubmit}>Submit Changes</button>
           </Link>
+          <Link to="/profile">
+            <button>Cancel</button>
+          </Link>
         </div>
       </>
     );

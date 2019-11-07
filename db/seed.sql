@@ -43,6 +43,7 @@ CREATE TABLE streams (
   stream_video_link TEXT,
   stream_equipment TEXT,
   isApproved BOOL NOT NULL -- streams are approved by admins
+  purchase_id INT REFERENCES purchases(purchase_id)
 );
 
 CREATE TABLE review (

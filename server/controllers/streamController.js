@@ -29,6 +29,7 @@ module.exports = {
         stream_state,
         stream_city,
         stream_zip,
+        null,
         "false"
       );
     return res.status(200).send(newStream);

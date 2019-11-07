@@ -19,10 +19,12 @@
   z-index: 10000;
 }
 
-.Mystreams-header h2 {
+.Mystreams-header button {
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
 .Mystreams-container {

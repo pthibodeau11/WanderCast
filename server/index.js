@@ -87,7 +87,8 @@ app.get(`/api/purchases`, auth.adminsOnly, purchController.getAllPurchases); // 
 
 // Nodemailer setup
 var transport = {
-  host: "smtp.ethereal.email",
+  service: "Gmail",
+  host: "smtp.gmail.com",
   port: 587,
   auth: {
     user: creds.USER,
@@ -113,8 +114,8 @@ app.post("/send", (req, res, next) => {
 
   var mail = {
     from: name,
-    to: "alfonso.hansen3@ethereal.email", //Change to email address that you want to receive messages on
-    subject: "This is a test",
+    to: "pat@wandercast.co", //Change to email address that you want to receive messages on
+    subject: "Contact us request",
     text: content
   };
 

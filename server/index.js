@@ -12,9 +12,15 @@ const streamController = require("./controllers/streamController");
 const userController = require("./controllers/userController");
 const auth = require("./middleware/authMiddleware");
 var nodemailer = require("nodemailer");
-const creds = require("../emailconfig.js");
+const creds = require("../emailconfig");
 
 app.use(express.json());
+
+app.use((request, response, next) => {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 
 app.use(
   session({
@@ -103,7 +109,7 @@ app.post("/send", (req, res, next) => {
   var name = req.body.name;
   var email = req.body.email;
   var message = req.body.message;
-  var content = `name: ${name} \n email: ${email} \n message: ${content} `;
+  var content = `name: ${name} \n email: ${email} \n message: ${message} `;
 
   var mail = {
     from: name,

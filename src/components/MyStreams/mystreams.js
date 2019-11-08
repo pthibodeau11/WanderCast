@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PurchasedStreams from "./PurchasedStreams";
 import ApprovedStreams from "./ApprovedStreams";
 import PendingStreams from "./PendingStreams";
+import LiveStream from "./LiveStream";
 
 export default class mystreams extends Component {
   state = {
@@ -14,6 +15,9 @@ export default class mystreams extends Component {
       <>
         <div className="Mystreams-background">
           <div className="Mystreams-header">
+            <button onClick={() => this.setState({ currentTab: "live" })}>
+              Watch live
+            </button>
             <button onClick={() => this.setState({ currentTab: "purchased" })}>
               Purchased Streams
             </button>
@@ -25,14 +29,16 @@ export default class mystreams extends Component {
             </button>
           </div>
           <div className="Mystreams-container">
-            {this.state.currentTab === "purchased" ? (
+            {this.state.currentTab === "live" ? (
+              <LiveStream />
+            ) : this.state.currentTab === "purchased" ? (
               <PurchasedStreams />
             ) : this.state.currentTab === "approved" ? (
               <ApprovedStreams />
             ) : this.state.currentTab === "created" ? (
               <PendingStreams />
             ) : (
-              <ApprovedStreams />
+              <PurchasedStreams />
             )}
           </div>
         </div>

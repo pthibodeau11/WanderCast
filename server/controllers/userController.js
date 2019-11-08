@@ -22,7 +22,12 @@ module.exports = {
   },
 
   editProfile: async (req, res) => {
-    const { user_first_name, user_last_name, user_birth_date } = req.body;
+    const {
+      user_first_name,
+      user_last_name,
+      user_birth_date,
+      user_profile_img
+    } = req.body;
     const { userId } = req.session.user;
     const oneUser = await req.app
       .get("db")
@@ -30,7 +35,8 @@ module.exports = {
         userId,
         user_first_name,
         user_last_name,
-        user_birth_date
+        user_birth_date,
+        user_profile_img
       ]);
 
     res.status(200).json(oneUser);

@@ -3,6 +3,7 @@ import "./signup.css";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { registerUser } from "../../redux/Reducers/authReducer";
+import axios from "axios";
 
 class signup extends Component {
   state = {
@@ -19,6 +20,22 @@ class signup extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.registerUser(this.state);
+    const name = this.state.user_first_name;
+    const email = this.state.user_email;
+    axios({
+      method: "POST",
+      url: "http://localhost:7777/send/welcome",
+      data: {
+        name: name,
+        email: email
+      }
+    }).then(response => {
+      if (response.data.msg === "success") {
+        alert("Message Sent.");
+      } else if (response.data.msg === "fail") {
+        alert("Message failed to send.");
+      }
+    });
   };
   render() {
     console.log(this.props.userId);

@@ -27,3 +27,5 @@ yarn-error.log*
 emailconfig.js
 
 /public
+
+/src/firebaseconfig.js

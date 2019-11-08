@@ -8,6 +8,7 @@ class profile extends Component {
   componentDidMount() {
     this.props.viewProfile();
   }
+
   render() {
     console.log(this.props.user[0] && this.props.user[0].isstreamer);
     let streamer = "";
@@ -42,7 +43,6 @@ class profile extends Component {
             <div className="Profile-image">
               <label>Profile pic</label>
               <p>{this.props.user[0] && this.props.user[0].user_profile_img}</p>
-              <button>Change pic</button>
             </div>
           </div>
         </div>

@@ -59,5 +59,11 @@ module.exports = {
       .streams.get_approved_streams(userId);
 
     return res.status(200).send(approvedStreams);
+  },
+  deleteStream: async (req, res) => {
+    const streamId = +req.params.streamId;
+    const streams = await req.app.get("db").streams.delete_stream(streamId);
+
+    res.status(200).json(streams);
   }
 };

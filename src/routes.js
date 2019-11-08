@@ -4,6 +4,7 @@ import Main from "./components/Main/Main";
 import Signup from "./components/Signup/signup";
 import Login from "./components/Login/login";
 import Profile from "./components/Profile/profile";
+import ContactUs from "./components/ContactUs/ContactUs";
 import AlterProfile from "./components/Profile/AlterProfile";
 import NewApplication from "./components/NewApplication/newapplication";
 import ViewApplication from "./components/ViewApplication/viewapplication";
@@ -17,6 +18,7 @@ export default (
     <Route component={Main} exact path="/" />
     <Route component={Signup} path="/signup" />
     <Route component={Login} path="/login" />
+    <Route component={ContactUs} path="/contactus" />
     <Route component={AlterProfile} path="/profile/edit" />
     <Route component={Profile} path="/profile" />
     <Route component={NewApplication} path="/newapplication" />

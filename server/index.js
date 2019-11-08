@@ -11,6 +11,8 @@ const reviewController = require("./controllers/reviewController");
 const streamController = require("./controllers/streamController");
 const userController = require("./controllers/userController");
 const auth = require("./middleware/authMiddleware");
+var nodemailer = require("nodemailer");
+const creds = require("../emailconfig.js");
 
 app.use(express.json());
 
@@ -62,7 +64,8 @@ app.get(`/api/stream`, auth.adminsOnly, streamController.getAllStreams); // get 
 app.get(`/api/streams/:streamId`, auth.adminsOnly, streamController.getOneStream); //get one stream
 app.post(`/api/streams`, auth.usersOnly, streamController.createStream); // user creates stream
 // app.put(`/api/streams/:streamId`, streamController.editStream) // user edits stream they created
-// app.delete(`/api/streams/:streamId`, streamController.deleteStream) // user can delete stream not yet matched
+// prettier-ignore
+app.delete(`/api/streams/:streamId`, auth.usersOnly, streamController.deleteStream) // user can delete stream not yet matched
 
 // // PURCHASES ENDPOINTS
 // prettier-ignore
@@ -75,6 +78,52 @@ app.get(`/api/purchases`, auth.adminsOnly, purchController.getAllPurchases); // 
 // app.get(`/api/reviews/:streamerId`, reviewController.getAll); // get reviews for an streamer
 // app.put(`/api/reviews/:streamerId/:reviewId`, reviewController.edit); // user can edit their review
 // app.delete(`/api/reviews/:streamerId/:reviewId`, reviewController.delete); // user or admin can delete review
+
+// Nodemailer setup
+var transport = {
+  host: "smtp.ethereal.email",
+  port: 587,
+  auth: {
+    user: creds.USER,
+    pass: creds.PASS
+  }
+};
+
+var transporter = nodemailer.createTransport(transport);
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take messages");
+  }
+});
+
+app.post("/send", (req, res, next) => {
+  var name = req.body.name;
+  var email = req.body.email;
+  var message = req.body.message;
+  var content = `name: ${name} \n email: ${email} \n message: ${content} `;
+
+  var mail = {
+    from: name,
+    to: "alfonso.hansen3@ethereal.email", //Change to email address that you want to receive messages on
+    subject: "This is a test",
+    text: content
+  };
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: "fail"
+      });
+    } else {
+      res.json({
+        msg: "success"
+      });
+    }
+  });
+});
 
 app.listen(SERVER_PORT, () =>
   console.log(`Server listening on ${SERVER_PORT}`)

@@ -10,6 +10,7 @@ const GET_ALL_STREAMS = "GET_ALL_STREAMS";
 const GET_ONE_STREAM = "GET_ONE_STREAM";
 const GET_PENDING_STREAMS = "GET_PENDING_STREAMS";
 const GET_APPROVED_STREAMS = "GET_APPROVED_STREAMS";
+const DELETE_STREAM = "DELETE_STREAM";
 
 export function createStream(newStream) {
   return {
@@ -45,6 +46,13 @@ export function getApprovedStreams() {
   };
 }
 
+export function deleteStream(streamId) {
+  return {
+    type: DELETE_STREAM,
+    payload: axios.delete(`/api/streams/${streamId}`)
+  };
+}
+
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
@@ -66,6 +74,10 @@ export default function reducer(state = initialState, action) {
         pending: payload.data
       };
     case `${GET_APPROVED_STREAMS}_FULFILLED`:
+      return {
+        approved: payload.data
+      };
+    case `${DELETE_STREAM}_FULFILLED`:
       return {
         approved: payload.data
       };

@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import "./mystreams.css";
 import { connect } from "react-redux";
-import { getPendingStreams } from "../../redux/Reducers/streamReducer";
+import {
+  getPendingStreams,
+  deleteStream
+} from "../../redux/Reducers/streamReducer";
 
 class PendingStreams extends Component {
   componentDidMount() {
     this.props.getPendingStreams();
   }
+
+  handleDelete = () => {
+    console.log(this.props.pending[0].stream_id);
+    this.props.deleteStream(this.props.pending[0].stream_id);
+  };
   render() {
     const pendingMapped =
       this.props.pending &&
@@ -19,7 +27,7 @@ class PendingStreams extends Component {
             <li className="Mystreams-box-row">{pending.stream_city}</li>
             <li className="Mystreams-box-row">{pending.stream_price}</li>
             <button>Edit</button>
-            <button>Cancel</button>
+            <button onClick={this.handleDelete}>Delete</button>
           </ul>
         );
       });
@@ -41,6 +49,7 @@ const mapStateToProps = reduxState => {
 export default connect(
   mapStateToProps,
   {
-    getPendingStreams
+    getPendingStreams,
+    deleteStream
   }
 )(PendingStreams);

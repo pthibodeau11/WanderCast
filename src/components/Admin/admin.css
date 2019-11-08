@@ -1,6 +1,6 @@
 .Admin-background {
   width: 100%;
-  /* height: 700px; */
+  height: 700px;
   margin-top: 30px;
   background-image: url("../../plain_background_landing.jpg");
   background-repeat: no-repeat;
@@ -19,10 +19,32 @@
   z-index: 10000;
 }
 
+.Admin-header button {
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
 .Admin-header h2 {
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.Admin-table {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.Admin-table-column {
+  list-style: none;
+  margin-right: 10px;
+  width: 200px;
+  font-weight: bold;
 }
 
 .Admin-container {
@@ -34,12 +56,36 @@
 }
 
 .Admin-box {
-  width: 40%;
+  width: 95%;
   display: flex;
   flex-direction: row;
+  text-align: left;
+}
+
+.Admin-box-id {
+  width: 100px;
+  list-style: none;
+}
+
+.Admin-table-id {
+  width: 100px;
+  list-style: none;
+  font-weight: bold;
 }
 
 .Admin-box-row {
   list-style: none;
   margin-right: 10px;
+  width: 200px;
+}
+
+.Admin-box-title {
+  width: 300px;
+  list-style: none;
+}
+
+.Admin-table-title {
+  width: 300px;
+  list-style: none;
+  font-weight: bold;
 }

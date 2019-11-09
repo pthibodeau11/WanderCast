@@ -4,7 +4,6 @@ module.exports = {
     const {
       stream_title,
       stream_desc,
-      stream_date,
       stream_time,
       stream_hours,
       stream_category,
@@ -20,7 +19,6 @@ module.exports = {
         userId,
         stream_title,
         stream_desc,
-        stream_date,
         stream_time,
         stream_hours,
         stream_category,

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getUserPurchases } from "../../redux/Reducers/purchReducer";
 import LiveStream from "./LiveStream";
 import Iframe from "react-iframe";
+import Moment from "react-moment";
 
 class PurchasedStreams extends Component {
   constructor() {
@@ -30,7 +31,12 @@ class PurchasedStreams extends Component {
         return (
           <ul className="Mystreams-box">
             <li className="Mystreams-box-row">{purchase.stream_title}</li>
-            <li className="Mystreams-box-row">{purchase.stream_date}</li>
+            <li className="Mystreams-box-row">
+              <Moment format="LLLL">{purchase.stream_time}</Moment>
+            </li>
+            <li className="Mystreams-box-row">
+              <Moment fromNow>{purchase.stream_time}</Moment>
+            </li>
             <li className="Mystreams-box-row">{purchase.stream_hours}</li>
             <li className="Mystreams-box-row">{purchase.stream_city}</li>
             <button

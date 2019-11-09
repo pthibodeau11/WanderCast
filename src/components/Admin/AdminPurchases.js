@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./admin.css";
+import Moment from "react-moment";
 
 import { getAllPurchases } from "../../redux/Reducers/purchReducer";
 
@@ -16,7 +17,9 @@ class AdminPurchases extends Component {
           <ul className="Admin-box">
             <li className="Admin-box-id">{purchase.user_id}</li>
             <li className="Admin-box-id">{purchase.purchase_id}</li>
-            <li className="Admin-box-row">{purchase.purchase_timestamp}</li>
+            <li className="Admin-box-row">
+              <Moment>{purchase.purchase_timestamp}</Moment>
+            </li>
           </ul>
         );
       });

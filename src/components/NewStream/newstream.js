@@ -3,13 +3,16 @@ import "./newstream.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { createStream } from "../../redux/Reducers/streamReducer";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 class newstream extends Component {
   state = {
     stream_title: "",
     stream_desc: "",
-    stream_date: "",
-    stream_time: "",
+    // stream_date: "",
+    stream_time: new Date(),
     stream_hours: "",
     stream_category: "",
     stream_country: "",
@@ -17,6 +20,7 @@ class newstream extends Component {
     stream_state: "",
     stream_city: "",
     stream_zip: ""
+    // startDate: new Date()
   };
 
   handleInput = e => {
@@ -30,6 +34,14 @@ class newstream extends Component {
       "stream request submitted! A WanderCast team member will review and be back shortly!"
     );
   };
+
+  handleChange = date => {
+    this.setState({
+      stream_time: date
+    });
+    console.log(this.state.stream_time);
+  };
+
   render() {
     return (
       <>
@@ -48,23 +60,15 @@ class newstream extends Component {
               <label>Describe your stream request in detail:</label>
               <textarea name="stream_desc" onChange={this.handleInput} />
             </div>
+
             <div className="Newstream-field">
-              <label>
-                What day do you need the streamer (we need 48hrs advance
-                notice)?
-              </label>
-              <input
-                name="stream_date"
-                onChange={this.handleInput}
-                placeholder="yyyy-mm-dd"
-              />
-            </div>
-            <div className="Newstream-field">
-              <label>What time will the streamer need to arrive?</label>
-              <input
-                name="stream_time"
-                onChange={this.handleInput}
-                placeholder="yyyy-mm-dd hh:mm:ss"
+              <label>What day/time will the streamer need to arrive?</label>
+
+              <DatePicker
+                selected={this.state.stream_time}
+                onChange={this.handleChange}
+                showTimeSelect
+                dateFormat="MMMM d, yyyy h:mm aa"
               />
             </div>
             <div className="Newstream-field">

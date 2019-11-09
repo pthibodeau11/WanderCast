@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./admin.css";
 import { getAllStreams } from "../../redux/Reducers/streamReducer";
+import Moment from "react-moment";
 
 class AdminStreams extends Component {
   componentDidMount() {
@@ -15,7 +16,9 @@ class AdminStreams extends Component {
           <ul className="Admin-box">
             <li className="Admin-box-id">{stream.stream_id}</li>
             <li className="Admin-box-title">{stream.stream_title}</li>
-            <li className="Admin-box-row">{stream.stream_date}</li>
+            <li className="Admin-box-row">
+              <Moment>{stream.stream_time}</Moment>
+            </li>
             <li className="Admin-box-row">{stream.stream_city}</li>
             <li className="Admin-box-row">
               {JSON.stringify(stream.isapproved)}
@@ -30,7 +33,7 @@ class AdminStreams extends Component {
         <ul className="Admin-table">
           <li className="Admin-table-id">Stream ID</li>
           <li className="Admin-table-title">Stream Title</li>
-          <li className="Admin-table-column">Stream Date</li>
+          <li className="Admin-table-column">Stream Time</li>
           <li className="Admin-table-column">Stream City</li>
           <li className="Admin-table-column">Approved?</li>
           <li className="Admin-table-column">Purchase ID</li>

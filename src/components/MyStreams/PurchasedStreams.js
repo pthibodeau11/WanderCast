@@ -46,7 +46,9 @@ class PurchasedStreams extends Component {
               Watch Stream
             </button>
             <li className="Mystreams-box-row">{purchase.stream_video_link}</li>
-            <li className="Mystreams-box-row">{purchase.purchase_timestamp}</li>
+            <li className="Mystreams-box-row">
+              <Moment format="LLLL">{purchase.purchase_timestamp}</Moment>
+            </li>
             <li className="Mystreams-box-row">{purchase.stream_price}</li>
           </ul>
         );

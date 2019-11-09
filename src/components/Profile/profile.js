@@ -42,7 +42,9 @@ class profile extends Component {
             </div>
             <div className="Profile-image">
               <label>Profile pic</label>
-              <p>{this.props.user[0] && this.props.user[0].user_profile_img}</p>
+              <img
+                src={this.props.user[0] && this.props.user[0].user_profile_img}
+              />
             </div>
           </div>
         </div>

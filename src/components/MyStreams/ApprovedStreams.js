@@ -30,7 +30,7 @@ class ApprovedStreams extends Component {
         );
       });
     return (
-      <div>
+      <div className="Mystreams-mappedlist">
         <h2>My approved (ready for purchase) stream requests</h2>
         {approvedMapped}
       </div>

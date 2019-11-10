@@ -89,3 +89,9 @@
   list-style: none;
   font-weight: bold;
 }
+
+.Admin-mappedlist {
+  max-height: 100%;
+  width: 100%;
+  overflow: auto;
+}

@@ -28,7 +28,7 @@ class AdminStreams extends Component {
         );
       });
     return (
-      <div>
+      <div className="Admin-mappedlist">
         <h2>All streams</h2>
         <ul className="Admin-table">
           <li className="Admin-table-id">Stream ID</li>

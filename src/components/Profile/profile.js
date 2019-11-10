@@ -41,7 +41,6 @@ class profile extends Component {
               </Link>
             </div>
             <div className="Profile-image">
-              <label>Profile pic</label>
               <img
                 src={this.props.user[0] && this.props.user[0].user_profile_img}
               />

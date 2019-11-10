@@ -8,13 +8,21 @@ import {
 import Moment from "react-moment";
 
 class PendingStreams extends Component {
+  constructor() {
+    super();
+    this.state = {
+      streamId: ""
+    };
+  }
   componentDidMount() {
     this.props.getPendingStreams();
+    // console.log(this.props.pending[0].stream_id);
   }
 
-  handleDelete = () => {
-    console.log(this.props.pending[0].stream_id);
-    this.props.deleteStream(this.props.pending[0].stream_id);
+  handleDelete = e => {
+    this.setState({ streamId: e });
+    console.log(this.state.streamId);
+    this.props.deleteStream(this.state.streamId);
   };
   render() {
     const pendingMapped =
@@ -33,12 +41,14 @@ class PendingStreams extends Component {
             <li className="Mystreams-box-row">{pending.stream_city}</li>
             <li className="Mystreams-box-row">{pending.stream_price}</li>
             <button>Edit</button>
-            <button onClick={this.handleDelete}>Delete</button>
+            <button onClick={() => this.handleDelete(pending.stream_id)}>
+              Delete
+            </button>
           </ul>
         );
       });
     return (
-      <div>
+      <div className="Mystreams-mappedlist">
         <h2>My created (pending approval) stream requests</h2>
         {pendingMapped}
       </div>

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "./newstream.css";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { createStream } from "../../redux/Reducers/streamReducer";
+import { Link, Redirect } from "react-router-dom";
+import {
+  createStream,
+  getPendingStreams
+} from "../../redux/Reducers/streamReducer";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 class newstream extends Component {
@@ -19,7 +21,8 @@ class newstream extends Component {
     stream_street: "",
     stream_state: "",
     stream_city: "",
-    stream_zip: ""
+    stream_zip: "",
+    redirect: false
     // startDate: new Date()
   };
 
@@ -29,20 +32,36 @@ class newstream extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    // if (
+    //   this.state.stream_title === "" ||
+    //   this.state.stream_desc === "" ||
+    //   this.state.stream_time === "" ||
+    //   this.state.stream_hours === "" ||
+    //   this.state.stream_category === "" ||
+    //   this.state.stream_country === "" ||
+    //   this.state.stream_street === "" ||
+    //   this.state.stream_state === "" ||
+    //   this.state.stream_city === "" ||
+    //   this.state.stream_zip === ""
+    // ) {
+    //   return alert("Please complete all fields");
+    // } else {
+    this.setState({ redirect: true });
     this.props.createStream(this.state);
     alert(
       "stream request submitted! A WanderCast team member will review and be back shortly!"
     );
+    // }
   };
 
   handleChange = date => {
     this.setState({
       stream_time: date
     });
-    console.log(this.state.stream_time);
   };
 
   render() {
+    if (this.state.redirect === true) return <Redirect to="/" />;
     return (
       <>
         <div className="Newstream-background">
@@ -109,11 +128,9 @@ class newstream extends Component {
             </div>
             <br />
             <br />
-            <Link to="/mystreams">
-              <button name="request" onClick={this.handleSubmit}>
-                Submit Stream Request
-              </button>
-            </Link>
+            <button name="request" onClick={this.handleSubmit}>
+              Submit Stream Request
+            </button>
             <Link to="/mystreams">
               <button>Cancel</button>
             </Link>
@@ -126,13 +143,15 @@ class newstream extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    streams: reduxState.streamReducer.streams
+    streams: reduxState.streamReducer.streams,
+    pending: reduxState.streamReducer.pending
   };
 };
 
 export default connect(
   mapStateToProps,
   {
-    createStream
+    createStream,
+    getPendingStreams
   }
 )(newstream);

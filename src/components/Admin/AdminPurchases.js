@@ -18,13 +18,13 @@ class AdminPurchases extends Component {
             <li className="Admin-box-id">{purchase.user_id}</li>
             <li className="Admin-box-id">{purchase.purchase_id}</li>
             <li className="Admin-box-row">
-              <Moment>{purchase.purchase_timestamp}</Moment>
+              <Moment format="LLLL">{purchase.purchase_timestamp}</Moment>
             </li>
           </ul>
         );
       });
     return (
-      <div>
+      <div className="Admin-mappedlist">
         <h2>Purchased streams</h2>
         <ul className="Admin-table">
           <li className="Admin-table-id">User ID</li>

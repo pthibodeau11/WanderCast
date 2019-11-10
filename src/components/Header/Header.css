@@ -22,11 +22,12 @@
 
 .Main-header-logo {
   margin-left: 35px;
-}
-
-img {
   max-height: 45px;
 }
+
+/* img {
+  max-height: 45px;
+} */
 
 .Search-component {
   display: flex;

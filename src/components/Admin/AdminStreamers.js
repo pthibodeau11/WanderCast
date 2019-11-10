@@ -22,7 +22,7 @@ class AdminStreamers extends Component {
         );
       });
     return (
-      <div>
+      <div className="Admin-mappedlist">
         <h2>All streamers</h2>
         <ul className="Admin-table">
           <li className="Admin-table-id">User ID</li>

@@ -51,8 +51,16 @@
   display: flex;
   flex-direction: row;
   text-align: left;
+  justify-content: space-between;
 }
 
+.Mystreams-box {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-between;
+}
 .Mystreams-table-column {
   list-style: none;
   margin-right: 10px;
@@ -60,37 +68,38 @@
   font-weight: bold;
 }
 
-.Mystreams-box {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-}
-
 .Mystreams-box-row {
   list-style: none;
   margin-right: 10px;
   width: 200px;
+  text-overflow: ellipsis;
+  max-height: 21px;
+  white-space: nowrap;
+  overflow: hidden;
 }
-
-.Mystreams-box-id {
-  width: 100px;
-  list-style: none;
-}
-
 .Mystreams-table-id {
-  width: 100px;
+  width: 125px;
   list-style: none;
   font-weight: bold;
 }
 
+.Mystreams-box-id {
+  width: 125px;
+  list-style: none;
+}
+
+.Mystreams-video {
+  display: flex;
+  justify-content: center;
+}
+
 .Mystreams-box-title {
-  width: 300px;
+  width: 150px;
   list-style: none;
 }
 
 .Mystreams-table-title {
-  width: 300px;
+  width: 150px;
   list-style: none;
   font-weight: bold;
 }
@@ -98,5 +107,5 @@
 .Mystreams-mappedlist {
   max-height: 100%;
   width: 100%;
-  overflow: auto;
+  overflow: none;
 }

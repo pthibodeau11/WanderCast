@@ -31,32 +31,33 @@ class PurchasedStreams extends Component {
         return (
           <ul className="Mystreams-box">
             <li className="Mystreams-box-row">{purchase.stream_title}</li>
-            <li className="Mystreams-box-title">
-              <Moment format="LLLL">{purchase.stream_time}</Moment>
+            <li className="Mystreams-box-id">
+              <Moment format="L">{purchase.stream_time}</Moment>
+            </li>
+            <li className="Mystreams-box-id">
+              <Moment format="LT">{purchase.stream_time}</Moment>
             </li>
             <li className="Mystreams-box-title">
               <Moment fromNow>{purchase.stream_time}</Moment>
             </li>
             <li className="Mystreams-box-id">{purchase.stream_hours}</li>
             <li className="Mystreams-box-title">{purchase.stream_city}</li>
+
+            <li className="Mystreams-box-id">{purchase.stream_price}</li>
             <button
-              className="Mystreams-box-title"
+              className="Mystreams-box-id"
               onClick={() => this.watchStream(purchase.stream_live_link)}
             >
               Watch Stream
             </button>
-            <li className="Mystreams-box-row">{purchase.stream_video_link}</li>
-            <li className="Mystreams-box-row">
-              <Moment format="LLLL">{purchase.purchase_timestamp}</Moment>
-            </li>
-            <li className="Mystreams-box-title">{purchase.stream_price}</li>
+            <button className="Mystreams-box-id">View Details</button>
           </ul>
         );
       });
     return (
       <div className="Mystreams-mappedlist">
-        <h2>My purchased streams</h2>
-        <div>
+        <h2>My Purchased Streams</h2>
+        <div className="Mystreams-video">
           <Iframe
             className="Stream-box"
             url={`https://video.ibm.com/combined-embed/${this.state.videoLink}?videos=0`}
@@ -70,14 +71,14 @@ class PurchasedStreams extends Component {
         </div>
         <ul className="Mystreams-table">
           <li className="Mystreams-table-column">Title</li>
-          <li className="Mystreams-table-title">Stream time</li>
+          <li className="Mystreams-table-id">Date</li>
+          <li className="Mystreams-table-id">Time</li>
           <li className="Mystreams-table-title">Countdown</li>
           <li className="Mystreams-table-id">Hrs</li>
-          <li className="Mystreams-table-title">Stream City</li>
-          <li className="Mystreams-table-title">Watch</li>
-          <li className="Mystreams-table-column">Video link</li>
-          <li className="Mystreams-table-column">Purchase date/time</li>
-          <li className="Mystreams-table-title">Purchase price</li>
+          <li className="Mystreams-table-title">City</li>
+          <li className="Mystreams-table-id">Cost</li>
+          <li className="Mystreams-table-id">Watch</li>
+          <li className="Mystreams-table-id"></li>
         </ul>
         {purchasesMapped}
       </div>

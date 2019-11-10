@@ -17,7 +17,10 @@ class ApprovedStreams extends Component {
           <ul className="Mystreams-box">
             <li className="Mystreams-box-row">{approved.stream_title}</li>
             <li className="Mystreams-box-row">
-              <Moment format="LLLL">{approved.stream_time}</Moment>
+              <Moment format="L">{approved.stream_time}</Moment>
+            </li>
+            <li className="Mystreams-box-row">
+              <Moment format="LT">{approved.stream_time}</Moment>
             </li>
             <li className="Mystreams-box-row">
               <Moment fromNow>{approved.stream_time}</Moment>
@@ -25,13 +28,25 @@ class ApprovedStreams extends Component {
             <li className="Mystreams-box-row">{approved.stream_hours}</li>
             <li className="Mystreams-box-row">{approved.stream_city}</li>
             <li className="Mystreams-box-row">{approved.stream_price}</li>
-            <button>Purchase ticket</button>
+            <button className="Mystreams-box-id">View Details</button>
+            <button className="Mystreams-box-id">Purchase ticket</button>
           </ul>
         );
       });
     return (
       <div className="Mystreams-mappedlist">
-        <h2>My approved (ready for purchase) stream requests</h2>
+        <h2>My Approved Streams</h2>
+        <ul className="Mystreams-table">
+          <li className="Mystreams-table-column">Title</li>
+          <li className="Mystreams-table-id">Date</li>
+          <li className="Mystreams-table-id">Time</li>
+          <li className="Mystreams-table-title">Countdown</li>
+          <li className="Mystreams-table-id">Hrs</li>
+          <li className="Mystreams-table-title">City</li>
+          <li className="Mystreams-table-id">Cost</li>
+          <li className="Mystreams-table-id"></li>
+          <li className="Mystreams-table-id"></li>
+        </ul>
         {approvedMapped}
       </div>
     );

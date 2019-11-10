@@ -5,10 +5,12 @@ import { getAllStreams } from "../../redux/Reducers/streamReducer";
 import Moment from "react-moment";
 
 class AdminStreams extends Component {
-  componentDidMount() {
-    this.props.getAllStreams();
+  async componentDidMount() {
+    await this.props.getAllStreams();
+    console.log(this.props);
   }
   render() {
+    console.log(this.props.streams);
     const streamsMapped =
       this.props.streams &&
       this.props.streams.map(stream => {

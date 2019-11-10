@@ -19,13 +19,13 @@ export default class mystreams extends Component {
               Watch live
             </button> */}
             <button onClick={() => this.setState({ currentTab: "purchased" })}>
-              Purchased Streams
+              Purchased
             </button>
             <button onClick={() => this.setState({ currentTab: "approved" })}>
-              Approved Streams
+              Approved
             </button>
             <button onClick={() => this.setState({ currentTab: "created" })}>
-              Created (not yet approved) Streams
+              Pending
             </button>
           </div>
           <div className="Mystreams-container">

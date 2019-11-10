@@ -19,10 +19,11 @@ class PendingStreams extends Component {
     // console.log(this.props.pending[0].stream_id);
   }
 
-  handleDelete = e => {
-    this.setState({ streamId: e });
+  handleDelete = async e => {
+    await this.setState({ streamId: e });
     console.log(this.state.streamId);
-    this.props.deleteStream(this.state.streamId);
+    await this.props.deleteStream(this.state.streamId);
+    this.props.getPendingStreams();
   };
   render() {
     const pendingMapped =
@@ -31,17 +32,23 @@ class PendingStreams extends Component {
         return (
           <ul className="Mystreams-box">
             <li className="Mystreams-box-row">{pending.stream_title}</li>
-            <li className="Mystreams-box-row">
-              <Moment format="LLLL">{pending.stream_time}</Moment>
+            <li className="Mystreams-box-id">
+              <Moment format="L">{pending.stream_time}</Moment>
             </li>
-            <li className="Mystreams-box-row">
+            <li className="Mystreams-box-id">
+              <Moment format="LT">{pending.stream_time}</Moment>
+            </li>
+            <li className="Mystreams-box-title">
               <Moment fromNow>{pending.stream_time}</Moment>
             </li>
-            <li className="Mystreams-box-row">{pending.stream_hours}</li>
-            <li className="Mystreams-box-row">{pending.stream_city}</li>
-            <li className="Mystreams-box-row">{pending.stream_price}</li>
-            <button>Edit</button>
-            <button onClick={() => this.handleDelete(pending.stream_id)}>
+            <li className="Mystreams-box-id">{pending.stream_hours}</li>
+            <li className="Mystreams-box-title">{pending.stream_city}</li>
+            <li className="Mystreams-box-id">{pending.stream_price}</li>
+            <button className="Mystreams-box-id">View/Edit</button>
+            <button
+              className="Mystreams-box-id"
+              onClick={() => this.handleDelete(pending.stream_id)}
+            >
               Delete
             </button>
           </ul>
@@ -49,7 +56,18 @@ class PendingStreams extends Component {
       });
     return (
       <div className="Mystreams-mappedlist">
-        <h2>My created (pending approval) stream requests</h2>
+        <h2>My Pending Streams</h2>
+        <ul className="Mystreams-table">
+          <li className="Mystreams-table-column">Title</li>
+          <li className="Mystreams-table-id">Date</li>
+          <li className="Mystreams-table-id">Time</li>
+          <li className="Mystreams-table-title">Countdown</li>
+          <li className="Mystreams-table-id">Hrs</li>
+          <li className="Mystreams-table-title">City</li>
+          <li className="Mystreams-table-id">Cost</li>
+          <li className="Mystreams-table-id"></li>
+          <li className="Mystreams-table-id"></li>
+        </ul>
         {pendingMapped}
       </div>
     );

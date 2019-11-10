@@ -1,5 +1,7 @@
 SELECT * FROM streams
 WHERE isapproved = 'true' AND user_id = $1 AND purchase_id IS NULL
+ORDER BY
+stream_id DESC
 
 -- SELECT * 
 -- FROM streams

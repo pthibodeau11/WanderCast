@@ -3,9 +3,15 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-align: left;
+}
+
+.Powered-by {
+  text-align: left;
+  margin: 0;
+  margin-left: 150px;
 }
 
 .Diff-box {
@@ -23,10 +29,22 @@ p {
 
 .Partner-logos {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
   background: #faf1f2;
+  width: 100%;
+}
+
+.Partner-logos-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.Partner-logos img {
+  height: 65px;
 }

@@ -39,10 +39,10 @@ export default class MainBody extends Component {
         <h4 className="Powered-by">Powered by:</h4>
         <div className="Partner-logos">
           <div className="Partner-logos-list">
+            <img src={zendesk} alt="zendesk" />
             <img src={firebase} alt="firebase" />
-            <img src={google} alt="google" />
             <img src={ibm} alt="ibm" />
-            <img src={firebase} alt="firebase" />
+            <img src={google} alt="google" />
             <img src={nodemailer} alt="nodemailer" />
           </div>
         </div>

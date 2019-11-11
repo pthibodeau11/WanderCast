@@ -11,6 +11,7 @@ import ViewApplication from "./components/ViewApplication/viewapplication";
 import NewStream from "./components/NewStream/newstream";
 import MyStreams from "./components/MyStreams/mystreams";
 import ViewStream from "./components/ViewStream/viewstream";
+import StripePurchase from "./components/MyStreams/StripePurchase";
 import Admin from "./components/Admin/admin";
 
 export default (
@@ -26,6 +27,7 @@ export default (
     <Route component={NewStream} path="/newstream" />
     <Route component={MyStreams} path="/mystreams" />
     <Route component={ViewStream} path="/viewstream" />
+    <Route component={StripePurchase} path="/stripepurchase" />
     <Route component={Admin} path="/admin" />
     <Route render={() => <h1>404 - Not Found</h1>} />
   </Switch>

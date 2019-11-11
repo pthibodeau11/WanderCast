@@ -1,11 +1,13 @@
 import axios from "axios";
 
 const initialState = {
-  purchases: []
+  purchases: [],
+  purchase: {}
 };
 
 const GET_ALL_PURCHASES = "GET_ALL_PURCHASES";
 const GET_USER_PURCHASES = "GET_USER_PURCHASES";
+const CREATE_NEW_PURCHASE = "CREATE_NEW_PURCHASE";
 
 export function getAllPurchases() {
   return {
@@ -21,6 +23,13 @@ export function getUserPurchases() {
   };
 }
 
+export function createPurchase(newPurchase) {
+  return {
+    type: CREATE_NEW_PURCHASE,
+    payload: axios.post("/api/purchases", newPurchase)
+  };
+}
+
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
@@ -32,6 +41,10 @@ export default function reducer(state = initialState, action) {
     case `${GET_USER_PURCHASES}_FULFILLED`:
       return {
         purchases: payload.data
+      };
+    case `${CREATE_NEW_PURCHASE}_FULFILLED`:
+      return {
+        purchase: payload.data
       };
     default:
       return state;

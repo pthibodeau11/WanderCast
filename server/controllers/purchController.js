@@ -10,5 +10,19 @@ module.exports = {
       .purchases.get_user_purchases(userId);
 
     return res.status(200).send(userPurchases);
+  },
+  createPurchase: async (req, res) => {
+    const { userId } = req.session.user;
+    const { stream_id, streamer_id, purchase_timestamp } = req.body;
+
+    const newPurchase = await req.app
+      .get("db")
+      .purchases.create_new_purchase(
+        stream_id,
+        userId,
+        streamer_id,
+        purchase_timestamp
+      );
+    return res.status(200).send(newPurchase);
   }
 };

@@ -41,6 +41,7 @@ export default class MainBody extends Component {
           <div className="Partner-logos-list">
             <img src={zendesk} alt="zendesk" />
             <img src={firebase} alt="firebase" />
+            <img src={stripe} alt="stripe" />
             <img src={ibm} alt="ibm" />
             <img src={google} alt="google" />
             <img src={nodemailer} alt="nodemailer" />

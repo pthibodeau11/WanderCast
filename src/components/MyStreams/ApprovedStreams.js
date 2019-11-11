@@ -3,19 +3,29 @@ import "./mystreams.css";
 import { connect } from "react-redux";
 import { getApprovedStreams } from "../../redux/Reducers/streamReducer";
 import Moment from "react-moment";
-import { Link } from "react-router-dom";
+import StripePurchase from "./StripePurchase";
 
 class ApprovedStreams extends Component {
   state = {
     selectedStream: "",
-    purchasing: "default"
+    streamPrice: "",
+    streamTitle: "",
+    purchasing: "",
+    streamerId: ""
   };
 
-  // handlePurchase = () => {
-  //   this.setState({ purchasing: "purchasing" });
-  //   console.log(this.state.purchasing);
-  //   await this.setState({ selectedStream: e });
-  // };
+  handlePurchase = e => {
+    this.setState({
+      selectedStream: e.stream_id,
+      streamPrice: e.stream_price,
+      streamTitle: e.stream_title,
+      streamerId: e.streamer_id
+    });
+    console.log(e);
+    console.log(this.state.streamPrice);
+    this.setState({ purchasing: "purchasing" });
+    console.log(this.state.purchasing);
+  };
 
   // handleCancel = () => {
   //   this.setState({ purchasing: "default" });
@@ -45,20 +55,18 @@ class ApprovedStreams extends Component {
             <li className="Mystreams-box-row">{approved.stream_city}</li>
             <li className="Mystreams-box-row">{approved.stream_price}</li>
             <button className="Mystreams-box-id">View Details</button>
-            <Link to="/stripepurchase">
-              <button
-                className="Mystreams-box-id"
-                // onClick={() => this.setState({ purchasing: "purchasing" })}
-              >
-                Purchase ticket
-              </button>
-            </Link>
+            <button
+              className="Mystreams-box-id"
+              onClick={() => this.handlePurchase(approved)}
+            >
+              Purchase ticket
+            </button>
           </ul>
         );
       });
     return (
       <>
-        <div className="Mystreams-mappedlist">
+        {/* <div className="Mystreams-mappedlist">
           <h2>My Approved Streams</h2>
           <ul className="Mystreams-table">
             <li className="Mystreams-table-column">Title</li>
@@ -72,8 +80,8 @@ class ApprovedStreams extends Component {
             <li className="Mystreams-table-id"></li>
           </ul>
           {approvedMapped}
-        </div>
-        {/* {this.state.purchasing === "default" ? (
+        </div> */}
+        {this.state.purchasing === "default" ? (
           <div className="Mystreams-mappedlist">
             <h2>My Approved Streams</h2>
             <ul className="Mystreams-table">
@@ -89,8 +97,13 @@ class ApprovedStreams extends Component {
             </ul>
             {approvedMapped}
           </div>
-        ) : this.state.purchase === "purchasing" ? (
-          <StripePurchase />
+        ) : this.state.purchasing === "purchasing" ? (
+          <StripePurchase
+            streamId={this.state.selectedStream}
+            streamPrice={this.state.streamPrice}
+            streamTitle={this.state.streamTitle}
+            streamerId={this.state.streamerId}
+          />
         ) : (
           <div className="Mystreams-mappedlist">
             <h2>My Approved Streams</h2>
@@ -107,7 +120,7 @@ class ApprovedStreams extends Component {
             </ul>
             {approvedMapped}
           </div>
-        )} */}
+        )}
       </>
     );
   }

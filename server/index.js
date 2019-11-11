@@ -3,7 +3,12 @@ const express = require("express");
 const app = express();
 const massive = require("massive");
 const session = require("express-session");
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const {
+  SERVER_PORT,
+  CONNECTION_STRING,
+  SESSION_SECRET,
+  STRIPE_KEY
+} = process.env;
 const appController = require("./controllers/appController");
 const authController = require("./controllers/authController");
 const purchController = require("./controllers/purchController");
@@ -13,6 +18,8 @@ const userController = require("./controllers/userController");
 const auth = require("./middleware/authMiddleware");
 var nodemailer = require("nodemailer");
 const creds = require("../emailconfig");
+const stripe = require("stripe")(STRIPE_KEY);
+const uuid = require("uuid/v4");
 
 app.use(express.json());
 
@@ -77,7 +84,7 @@ app.delete(`/api/streams/:streamId`, auth.usersOnly, streamController.deleteStre
 // prettier-ignore
 app.get(`/api/purchases/user`, auth.usersOnly, purchController.getUserPurchases) // get list of all purchased streams by user
 app.get(`/api/purchases`, auth.adminsOnly, purchController.getAllPurchases); // admin sees all purchases
-// app.post(`/api/purchases`, purchController.purchase) // buy one ticket
+app.post(`/api/purchases`, auth.usersOnly, purchController.createPurchase); // buy one ticket
 
 // // REVIEWS ENDPOINTS
 // app.post(`/api/reviews`, reviewController.add); //user can add review
@@ -156,6 +163,53 @@ app.post("/send/welcome", (req, res, next) => {
       });
     }
   });
+});
+
+//STRIPE
+
+app.post("/checkout", async (req, res) => {
+  console.log("Request:", req.body);
+
+  let error;
+  let status;
+  try {
+    const { streamPrice, token, streamTitle } = req.body;
+
+    const customer = await stripe.customers.create({
+      email: token.email,
+      source: token.id
+    });
+
+    const idempotency_key = uuid();
+    const charge = await stripe.charges.create(
+      {
+        amount: streamPrice * 100,
+        currency: "usd",
+        customer: customer.id,
+        receipt_email: token.email,
+        description: `Purchased ${streamTitle}`,
+        shipping: {
+          name: token.card.name,
+          address: {
+            line1: token.card.address_line1,
+            line2: token.card.address_line2,
+            city: token.card.address_city,
+            country: token.card.address_country,
+            postal_code: token.card.address_zip
+          }
+        }
+      },
+      {
+        idempotency_key
+      }
+    );
+    console.log("Charge:", { charge });
+    status = "success";
+  } catch (error) {
+    console.error("Error:", error);
+    status = "failure";
+  }
+  res.json({ error, status });
 });
 
 app.listen(SERVER_PORT, () =>

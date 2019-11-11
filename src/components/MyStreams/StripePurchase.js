@@ -33,6 +33,22 @@ class StripePurchase extends Component {
           stream_id: streamId,
           streamer_id: streamerId
         });
+        axios({
+          method: "POST",
+          url: "http://localhost:7777/send/purchase",
+          data: {
+            name: token.card.name,
+            email: token.email,
+            price: streamPrice,
+            title: streamTitle
+          }
+        }).then(response => {
+          if (response.data.msg === "success") {
+            alert("Message Sent.");
+          } else if (response.data.msg === "fail") {
+            alert("Message failed to send.");
+          }
+        });
       } else if (response.data.status === "failure") {
         toast("Something went wrong", { type: "success" });
       }

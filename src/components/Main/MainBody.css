@@ -48,3 +48,29 @@ p {
 .Partner-logos img {
   height: 65px;
 }
+
+@media (max-width: 1000px) {
+  .Partner-logos {
+    display: none;
+  }
+  .Diff-box {
+    width: 150px;
+  }
+
+  .Diff-box img {
+    height: 45px;
+  }
+
+  .Diff-box h1 {
+    font-size: 22px;
+  }
+  .Diff-box p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Differentiators {
+    flex-direction: column;
+  }
+}

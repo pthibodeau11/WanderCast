@@ -65,3 +65,9 @@
 .Nav-link:hover {
   border-bottom: solid #cc1019;
 }
+
+@media (max-width: 800px) {
+  .Nav-bar {
+    flex-direction: column;
+  }
+}

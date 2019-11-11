@@ -165,6 +165,36 @@ app.post("/send/welcome", (req, res, next) => {
   });
 });
 
+app.post("/send/purchase", (req, res, next) => {
+  var name = req.body.name;
+  var email = req.body.email;
+  var title = req.body.title;
+  var price = req.body.price;
+  // var message = req.body.message;
+  // var content = `name: ${name} \n email: ${email} \n message: ${message} `;
+
+  var mail = {
+    from: "support@wandercast.co",
+    to: email, //Change to email address that you want to receive messages on
+    subject: "Thank you for your purchase!",
+    text: `Thank you ${name} for your business! 
+    This email confirms that you purchased ${title} for a total $${price} usd. 
+    Thank you. This is definitely not a scam :)`
+  };
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: "fail"
+      });
+    } else {
+      res.json({
+        msg: "success"
+      });
+    }
+  });
+});
+
 //STRIPE
 
 app.post("/checkout", async (req, res) => {

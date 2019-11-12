@@ -6,6 +6,7 @@ const initialState = {
 };
 
 const GET_ALL_PURCHASES = "GET_ALL_PURCHASES";
+const GET_USER_PURCHASE = "GET_USER_PURCHASE";
 const GET_USER_PURCHASES = "GET_USER_PURCHASES";
 const CREATE_NEW_PURCHASE = "CREATE_NEW_PURCHASE";
 
@@ -13,6 +14,12 @@ export function getAllPurchases() {
   return {
     type: GET_ALL_PURCHASES,
     payload: axios.get(`/api/purchases`)
+  };
+}
+export function getUserPurchase(streamId) {
+  return {
+    type: GET_USER_PURCHASE,
+    payload: axios.get(`/api/purchases/user/${streamId}`)
   };
 }
 
@@ -37,6 +44,10 @@ export default function reducer(state = initialState, action) {
     case `${GET_ALL_PURCHASES}_FULFILLED`:
       return {
         purchases: payload.data
+      };
+    case `${GET_USER_PURCHASE}_FULFILLED`:
+      return {
+        purchase: payload.data
       };
     case `${GET_USER_PURCHASES}_FULFILLED`:
       return {

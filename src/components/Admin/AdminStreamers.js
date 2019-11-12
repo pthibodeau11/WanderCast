@@ -19,6 +19,7 @@ class AdminStreamers extends Component {
             <li className="Admin-box-row">{streamer.user_first_name}</li>
             <li className="Admin-box-row">{streamer.user_last_name}</li>
             <li className="Admin-box-row">{streamer.user_email}</li>
+            <button className="Admin-box-id">View</button>
           </ul>
         );
       });
@@ -31,6 +32,7 @@ class AdminStreamers extends Component {
           <li className="Admin-table-column">First name</li>
           <li className="Admin-table-column">Last name</li>
           <li className="Admin-table-column">Email</li>
+          <li className="Admin-table-id"></li>
         </ul>
         {streamersMapped}
       </div>

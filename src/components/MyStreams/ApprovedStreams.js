@@ -4,14 +4,26 @@ import { connect } from "react-redux";
 import { getApprovedStreams } from "../../redux/Reducers/streamReducer";
 import Moment from "react-moment";
 import StripePurchase from "./StripePurchase";
+import ApprovedPopup from "./ApprovedPopup";
 
 class ApprovedStreams extends Component {
   state = {
+    showPopup: false,
     selectedStream: "",
-    streamPrice: "",
-    streamTitle: "",
     purchasing: "",
-    streamerId: ""
+    streamId: "",
+    streamTitle: "",
+    streamDesc: "",
+    streamTime: "",
+    streamHours: "",
+    streamerId: "",
+    streamEquip: "",
+    streamCountry: "",
+    streamStreet: "",
+    streamCity: "",
+    streamState: "",
+    streamZip: "",
+    streamPrice: ""
   };
 
   handlePurchase = e => {
@@ -25,6 +37,26 @@ class ApprovedStreams extends Component {
     console.log(this.state.streamPrice);
     this.setState({ purchasing: "purchasing" });
     console.log(this.state.purchasing);
+  };
+  togglePopup = e => {
+    console.log(e);
+    console.log(e.stream_id);
+    this.setState({
+      showPopup: !this.state.showPopup,
+      streamId: e.stream_id,
+      streamTitle: e.stream_title,
+      streamDesc: e.stream_desc,
+      streamTime: e.stream_time,
+      streamHours: e.stream_hours,
+      streamerId: e.streamer_id,
+      streamEquip: e.stream_equipment,
+      streamCountry: e.stream_country,
+      streamStreet: e.stream_street,
+      streamCity: e.stream_city,
+      streamState: e.stream_state,
+      streamZip: e.stream_zip,
+      streamPrice: e.stream_price
+    });
   };
 
   // handleCancel = () => {
@@ -42,24 +74,47 @@ class ApprovedStreams extends Component {
         return (
           <ul className="Mystreams-box">
             <li className="Mystreams-box-row">{approved.stream_title}</li>
-            <li className="Mystreams-box-row">
+            <li className="Mystreams-box-id">
               <Moment format="L">{approved.stream_time}</Moment>
             </li>
-            <li className="Mystreams-box-row">
+            <li className="Mystreams-box-id">
               <Moment format="LT">{approved.stream_time}</Moment>
             </li>
-            <li className="Mystreams-box-row">
+            <li className="Mystreams-box-title">
               <Moment fromNow>{approved.stream_time}</Moment>
             </li>
-            <li className="Mystreams-box-row">{approved.stream_hours}</li>
-            <li className="Mystreams-box-row">{approved.stream_city}</li>
-            <li className="Mystreams-box-row">{approved.stream_price}</li>
-            <button className="Mystreams-box-id">View Details</button>
+            <li className="Mystreams-box-id">{approved.stream_hours}</li>
+            <li className="Mystreams-box-title">{approved.stream_city}</li>
+            <li className="Mystreams-box-id">{approved.stream_price}</li>
+            <button
+              className="Mystreams-box-id"
+              onClick={() => this.togglePopup(approved)}
+            >
+              Review
+            </button>
+            {this.state.showPopup ? (
+              <ApprovedPopup
+                closePopup={this.togglePopup.bind(this)}
+                streamId={this.state.streamId}
+                streamTitle={this.state.streamTitle}
+                streamDesc={this.state.streamDesc}
+                streamTime={this.state.streamTime}
+                streamHours={this.state.streamHours}
+                streamerId={this.state.streamerId}
+                streamEquip={this.state.streamEquip}
+                streamCountry={this.state.streamCountry}
+                streamStreet={this.state.streamStreet}
+                streamCity={this.state.streamCity}
+                streamState={this.state.streamState}
+                streamZip={this.state.streamZip}
+                purchasePrice={this.state.purchasePrice}
+              />
+            ) : null}
             <button
               className="Mystreams-box-id"
               onClick={() => this.handlePurchase(approved)}
             >
-              Purchase ticket
+              Purchase
             </button>
           </ul>
         );
@@ -90,7 +145,6 @@ class ApprovedStreams extends Component {
               <li className="Mystreams-table-id">Time</li>
               <li className="Mystreams-table-title">Countdown</li>
               <li className="Mystreams-table-id">Hrs</li>
-              <li className="Mystreams-table-title">City</li>
               <li className="Mystreams-table-id">Cost</li>
               <li className="Mystreams-table-id"></li>
               <li className="Mystreams-table-id"></li>
@@ -113,7 +167,6 @@ class ApprovedStreams extends Component {
               <li className="Mystreams-table-id">Time</li>
               <li className="Mystreams-table-title">Countdown</li>
               <li className="Mystreams-table-id">Hrs</li>
-              <li className="Mystreams-table-title">City</li>
               <li className="Mystreams-table-id">Cost</li>
               <li className="Mystreams-table-id"></li>
               <li className="Mystreams-table-id"></li>

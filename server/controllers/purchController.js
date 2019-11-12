@@ -3,6 +3,15 @@ module.exports = {
     const allPurchases = await req.app.get("db").purchases.get_all_purchases();
     return res.status(200).send(allPurchases);
   },
+  getUserPurchase: async (req, res) => {
+    const { userId } = req.session.user;
+    const streamId = +req.params.streamId;
+    const onePurchase = await req.app
+      .get("db")
+      .purchases.get_user_purchase(userId, streamId);
+
+    return res.status(200).send(onePurchase);
+  },
   getUserPurchases: async (req, res) => {
     const { userId } = req.session.user;
     const userPurchases = await req.app
@@ -13,7 +22,12 @@ module.exports = {
   },
   createPurchase: async (req, res) => {
     const { userId } = req.session.user;
-    const { stream_id, streamer_id, purchase_timestamp } = req.body;
+    const {
+      stream_id,
+      streamer_id,
+      purchase_price,
+      purchase_timestamp
+    } = req.body;
 
     const newPurchase = await req.app
       .get("db")
@@ -21,6 +35,7 @@ module.exports = {
         stream_id,
         userId,
         streamer_id,
+        purchase_price,
         purchase_timestamp
       );
     return res.status(200).send(newPurchase);

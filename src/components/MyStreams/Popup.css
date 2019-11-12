@@ -1,0 +1,93 @@
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgb(0, 0, 0, 0.15);
+}
+
+.popup-inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  border-radius: 20px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.popup-close-button-div {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  right: 0;
+  align-items: flex-end;
+}
+
+.popup-close-button {
+  position: absolute;
+  top: 2%;
+  right: 0.5%;
+  border-radius: 9px;
+  padding: 7px;
+  color: white;
+  background: #f94659;
+  width: 20px;
+  margin-right: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  box-shadow: 5px 5px 5px -5px rgb(0, 0, 0, 0.56);
+  cursor: pointer;
+}
+
+.popup-header {
+  position: absolute;
+  top: 2%;
+  left: 32%;
+}
+
+.popup-body {
+  display: flex;
+  margin-left: 10px;
+}
+
+.popup-desc {
+  display: flex;
+  text-overflow: ellipsis;
+  max-height: 88px;
+  white-space: normal;
+  overflow: auto;
+  list-style: none;
+  margin-left: 10px;
+}
+
+.popup-desc label {
+  font-weight: bold;
+  width: 160px;
+  padding-right: 63px;
+  white-space: nowrap;
+}
+.popup-desc li {
+  margin-left: 8px;
+}
+
+.popup-body label {
+  font-weight: bold;
+  width: 160px;
+}
+
+.popup-body li {
+  list-style: none;
+  margin-left: 8px;
+}

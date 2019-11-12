@@ -18,14 +18,18 @@ class AdminStreams extends Component {
           <ul className="Admin-box">
             <li className="Admin-box-id">{stream.stream_id}</li>
             <li className="Admin-box-title">{stream.stream_title}</li>
-            <li className="Admin-box-row">
-              <Moment>{stream.stream_time}</Moment>
+            <li className="Admin-box-id">
+              <Moment format="L">{stream.stream_time}</Moment>
             </li>
-            <li className="Admin-box-row">{stream.stream_city}</li>
-            <li className="Admin-box-row">
+            <li className="Admin-box-id">
+              <Moment format="LT">{stream.stream_time}</Moment>
+            </li>
+            <li className="Admin-box-title">{stream.stream_city}</li>
+            <li className="Admin-box-id">
               {JSON.stringify(stream.isapproved)}
             </li>
-            <li className="Admin-box-row">{stream.purchase_id}</li>
+            <li className="Admin-box-id">{stream.purchase_id}</li>
+            <button className="Admin-box-id">Review</button>
           </ul>
         );
       });
@@ -34,11 +38,13 @@ class AdminStreams extends Component {
         <h2>All streams</h2>
         <ul className="Admin-table">
           <li className="Admin-table-id">Stream ID</li>
-          <li className="Admin-table-title">Stream Title</li>
-          <li className="Admin-table-column">Stream Time</li>
-          <li className="Admin-table-column">Stream City</li>
-          <li className="Admin-table-column">Approved?</li>
-          <li className="Admin-table-column">Purchase ID</li>
+          <li className="Admin-table-title">Title</li>
+          <li className="Admin-table-id">Date</li>
+          <li className="Admin-table-id">Time</li>
+          <li className="Admin-table-title">City</li>
+          <li className="Admin-table-id">Approved?</li>
+          <li className="Admin-table-id">Purchase ID</li>
+          <li className="Admin-table-id"></li>
         </ul>
         {streamsMapped}
       </div>

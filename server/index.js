@@ -83,6 +83,8 @@ app.delete(`/api/streams/:streamId`, auth.usersOnly, streamController.deleteStre
 // // PURCHASES ENDPOINTS
 // prettier-ignore
 app.get(`/api/purchases/user`, auth.usersOnly, purchController.getUserPurchases) // get list of all purchased streams by user
+// prettier-ignore
+app.get(`/api/purchases/user/:streamId`, auth.usersOnly, purchController.getUserPurchase); // get one purchase receipt for user
 app.get(`/api/purchases`, auth.adminsOnly, purchController.getAllPurchases); // admin sees all purchases
 app.post(`/api/purchases`, auth.usersOnly, purchController.createPurchase); // buy one ticket
 

@@ -28,10 +28,10 @@ export default class admin extends Component {
             <button
               onClick={() => this.setState({ currentTab: "applications" })}
             >
-              New Streamer Applications
+              Applications
             </button>
             <button onClick={() => this.setState({ currentTab: "purchases" })}>
-              Purchases
+              Sales
             </button>
           </div>
           <div className="Admin-container">

@@ -5,18 +5,46 @@ import { getUserPurchases } from "../../redux/Reducers/purchReducer";
 import LiveStream from "./LiveStream";
 import Iframe from "react-iframe";
 import Moment from "react-moment";
+import PurchasePopup from "./PurchasePopup";
 
 class PurchasedStreams extends Component {
   constructor() {
     super();
     this.state = {
-      videoLink: ""
+      videoLink: "",
+      showPopup: false,
+      streamId: "",
+      streamTitle: "",
+      streamDesc: "",
+      streamTime: "",
+      streamHours: "",
+      streamerId: "",
+      purchaseId: "",
+      purchaseTime: "",
+      purchasePrice: ""
     };
   }
 
   componentDidMount() {
     this.props.getUserPurchases();
   }
+
+  togglePopup = e => {
+    console.log(e);
+    console.log(e.stream_id);
+    this.setState({
+      showPopup: !this.state.showPopup,
+      streamId: e.stream_id,
+      streamTitle: e.stream_title,
+      streamDesc: e.stream_desc,
+      streamTime: e.stream_time,
+      streamHours: e.stream_hours,
+      streamerId: e.streamer_id,
+      purchaseId: e.purchase_id,
+      purchaseTime: e.purchase_timestamp,
+      purchasePrice: e.purchase_price
+    });
+  };
 
   watchStream = e => {
     console.log(e);
@@ -46,11 +74,30 @@ class PurchasedStreams extends Component {
             <li className="Mystreams-box-id">{purchase.stream_price}</li>
             <button
               className="Mystreams-box-id"
+              onClick={() => this.togglePopup(purchase)}
+            >
+              Receipt
+            </button>
+            {this.state.showPopup ? (
+              <PurchasePopup
+                closePopup={this.togglePopup.bind(this)}
+                streamId={this.state.streamId}
+                streamTitle={this.state.streamTitle}
+                streamDesc={this.state.streamDesc}
+                streamTime={this.state.streamTime}
+                streamHours={this.state.streamHours}
+                streamerId={this.state.streamerId}
+                purchaseId={this.state.purchaseId}
+                purchaseTime={this.state.purchaseTime}
+                purchasePrice={this.state.purchasePrice}
+              />
+            ) : null}
+            <button
+              className="Mystreams-box-id"
               onClick={() => this.watchStream(purchase.stream_live_link)}
             >
-              Watch Stream
+              Watch
             </button>
-            <button className="Mystreams-box-id">View Details</button>
           </ul>
         );
       });
@@ -69,6 +116,8 @@ class PurchasedStreams extends Component {
             height="356"
           ></Iframe>
         </div>
+        <br />
+        <br />
         <ul className="Mystreams-table">
           <li className="Mystreams-table-column">Title</li>
           <li className="Mystreams-table-id">Date</li>
@@ -77,7 +126,7 @@ class PurchasedStreams extends Component {
           <li className="Mystreams-table-id">Hrs</li>
           <li className="Mystreams-table-title">City</li>
           <li className="Mystreams-table-id">Cost</li>
-          <li className="Mystreams-table-id">Watch</li>
+          <li className="Mystreams-table-id"></li>
           <li className="Mystreams-table-id"></li>
         </ul>
         {purchasesMapped}

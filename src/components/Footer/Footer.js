@@ -6,10 +6,9 @@ export default class Footer extends Component {
   render() {
     return (
       <div className="Footer-main">
-        <h1>This will be the footer section</h1>
-        <Link to="/contactus">
-          <button>Contact Us</button>
-        </Link>
+        {/* <Link to="/contactus">
+          <button className="Footer-contact-button">Contact Us</button>
+        </Link> */}
       </div>
     );
   }

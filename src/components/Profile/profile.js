@@ -3,6 +3,7 @@ import "./profile.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { viewProfile } from "../../redux/Reducers/userReducer";
+import Moment from "react-moment";
 
 class profile extends Component {
   componentDidMount() {
@@ -22,28 +23,46 @@ class profile extends Component {
         <div className="Profile-background">
           <div className="Profile-container">
             <div className="Profile-info">
-              <label>First name:</label>
-              <li>
-                {this.props.user[0] && this.props.user[0].user_first_name}
-              </li>
-              <label>Last name: </label>
-              <li>{this.props.user[0] && this.props.user[0].user_last_name}</li>
-              <label>Email: </label>
-              <li>{this.props.user[0] && this.props.user[0].user_email}</li>
-              <label>Birthday: </label>
-              <li>
-                {this.props.user[0] && this.props.user[0].user_birth_date}
-              </li>
-              <label>Streamer Status: </label>
-              <li>{streamer}</li>
-              <Link to="/profile/edit">
-                <button>Edit info</button>
-              </Link>
-            </div>
-            <div className="Profile-image">
-              <img
-                src={this.props.user[0] && this.props.user[0].user_profile_img}
-              />
+              <div className="Profile-image">
+                <img
+                  src={
+                    this.props.user[0] && this.props.user[0].user_profile_img
+                  }
+                />
+              </div>
+              <div>
+                <label>First name:</label>
+                <li>
+                  {this.props.user[0] && this.props.user[0].user_first_name}
+                </li>
+              </div>
+              <div>
+                <label>Last name: </label>
+                <li>
+                  {this.props.user[0] && this.props.user[0].user_last_name}
+                </li>
+              </div>
+              <div>
+                <label>Email: </label>
+                <li>{this.props.user[0] && this.props.user[0].user_email}</li>
+              </div>
+              <div>
+                <label>Birthday: </label>
+                <li>
+                  <Moment format="L">
+                    {this.props.user[0] && this.props.user[0].user_birth_date}
+                  </Moment>
+                </li>
+              </div>
+              <div>
+                <label>Streamer Status: </label>
+                <li>{streamer}</li>
+              </div>
+              <div className="Edit-button-box">
+                <Link to="/profile/edit">
+                  <button className="Edit-button">Edit info</button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

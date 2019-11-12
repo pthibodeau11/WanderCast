@@ -17,6 +17,7 @@ class AdminUsers extends Component {
             <li className="Admin-box-row">{user.user_first_name}</li>
             <li className="Admin-box-row">{user.user_last_name}</li>
             <li className="Admin-box-row">{user.user_email}</li>
+            <button className="Admin-box-id">View</button>
           </ul>
         );
       });
@@ -28,6 +29,7 @@ class AdminUsers extends Component {
           <li className="Admin-table-column">First name</li>
           <li className="Admin-table-column">Last name</li>
           <li className="Admin-table-column">Email</li>
+          <li className="Admin-table-id"></li>
         </ul>
         {usersMapped}
       </div>

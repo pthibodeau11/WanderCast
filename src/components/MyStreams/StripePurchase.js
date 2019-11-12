@@ -31,7 +31,8 @@ class StripePurchase extends Component {
         toast("Success! Check emails for details", { type: "success" });
         this.props.createPurchase({
           stream_id: streamId,
-          streamer_id: streamerId
+          streamer_id: streamerId,
+          purchase_price: streamPrice
         });
         axios({
           method: "POST",

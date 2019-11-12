@@ -17,9 +17,14 @@ class AdminPurchases extends Component {
           <ul className="Admin-box">
             <li className="Admin-box-id">{purchase.user_id}</li>
             <li className="Admin-box-id">{purchase.purchase_id}</li>
-            <li className="Admin-box-row">
-              <Moment format="LLLL">{purchase.purchase_timestamp}</Moment>
+            <li className="Admin-box-id">
+              <Moment format="L">{purchase.purchase_timestamp}</Moment>
             </li>
+            <li className="Admin-box-id">
+              <Moment format="LT">{purchase.purchase_timestamp}</Moment>
+            </li>
+            <li className="Admin-box-id">{purchase.purchase_price}</li>
+            <button className="Admin-box-id">View</button>
           </ul>
         );
       });
@@ -29,7 +34,10 @@ class AdminPurchases extends Component {
         <ul className="Admin-table">
           <li className="Admin-table-id">User ID</li>
           <li className="Admin-table-id">Purchase ID</li>
-          <li className="Admin-table-column">Purchase date/time</li>
+          <li className="Admin-table-id">Purch Date</li>
+          <li className="Admin-table-id">Purch time</li>
+          <li className="Admin-table-id">Purch price</li>
+          <li className="Admin-table-id"></li>
         </ul>
         {purchasesMapped}
       </div>

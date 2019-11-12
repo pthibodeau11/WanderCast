@@ -30,18 +30,25 @@ class login extends Component {
       <>
         <div className="Login-background">
           <div className="Login-container">
-            <h1>Enter login info</h1>
-            <label>Email</label>
-            <input name="user_email" onChange={this.handleInput} />
-            <br />
-            <br />
-            <label>Password</label>
             <input
+              placeholder="email"
+              className="Login-input"
+              name="user_email"
+              onChange={this.handleInput}
+            />
+            <br />
+            <input
+              placeholder="password"
+              className="Login-input"
               type="password"
               name="user_password"
               onChange={this.handleInput}
             />
-            <button name="login" onClick={this.handleSubmit}>
+            <button
+              className="Login-button"
+              name="login"
+              onClick={this.handleSubmit}
+            >
               Log In
             </button>
           </div>

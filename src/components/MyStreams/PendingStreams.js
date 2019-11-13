@@ -41,7 +41,7 @@ class PendingStreams extends Component {
 
   togglePopup = e => {
     console.log(e);
-    console.log(e.stream_id);
+    // console.log(e.stream_id);
     this.setState({
       showPopup: !this.state.showPopup,
       streamId: e.stream_id,

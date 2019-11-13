@@ -30,6 +30,7 @@ module.exports = {
         null,
         "false"
       );
+
     return res.status(200).send(newStream);
   },
   getAllStreams: async (req, res) => {
@@ -42,6 +43,14 @@ module.exports = {
 
     return res.status(200).send(oneStream[0]);
   },
+  getApprovedStreams: async (req, res) => {
+    const { userId } = req.session.user;
+    const approvedStreams = await req.app
+      .get("db")
+      .streams.get_approved_streams(userId);
+
+    return res.status(200).send(approvedStreams);
+  },
   getPendingStreams: async (req, res) => {
     const { userId } = req.session.user;
     const pendingStreams = await req.app
@@ -50,13 +59,40 @@ module.exports = {
 
     return res.status(200).send(pendingStreams);
   },
-  getApprovedStreams: async (req, res) => {
-    const { userId } = req.session.user;
-    const approvedStreams = await req.app
+  editPendingStream: async (req, res) => {
+    const {
+      streamCategory,
+      streamTitle,
+      streamDesc,
+      streamTime,
+      streamHours,
+      streamCountry,
+      streamStreet,
+      streamCity,
+      streamState,
+      streamZip
+    } = req.body;
+    const streamId = +req.params.streamId;
+    await req.app
       .get("db")
-      .streams.get_approved_streams(userId);
-
-    return res.status(200).send(approvedStreams);
+      .streams.edit_stream(
+        streamId,
+        streamCategory,
+        streamTitle,
+        streamDesc,
+        streamTime,
+        streamHours,
+        streamCountry,
+        streamStreet,
+        streamCity,
+        streamState,
+        streamZip
+      );
+    const pendingStreams = await req.app
+      .get("db")
+      .streams.get_pending_streams(streamId);
+    console.log(pendingStreams);
+    res.status(200).json(pendingStreams);
   },
   deleteStream: async (req, res) => {
     const streamId = +req.params.streamId;

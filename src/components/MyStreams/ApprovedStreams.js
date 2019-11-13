@@ -84,7 +84,6 @@ class ApprovedStreams extends Component {
               <Moment fromNow>{approved.stream_time}</Moment>
             </li>
             <li className="Mystreams-box-id">{approved.stream_hours}</li>
-            <li className="Mystreams-box-title">{approved.stream_city}</li>
             <li className="Mystreams-box-id">{approved.stream_price}</li>
             <button
               className="Mystreams-box-id"

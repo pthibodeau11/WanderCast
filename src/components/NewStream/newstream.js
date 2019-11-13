@@ -69,7 +69,7 @@ class newstream extends Component {
             <h1>New stream request form</h1>
             <div className="Newstream-field">
               <label>Select/enter a category for this stream request:</label>
-              <input name="stream_date" onChange={this.handleInput} />
+              <input name="stream_category" onChange={this.handleInput} />
             </div>
             <div className="Newstream-field">
               <label>Stream title / brief description of request</label>

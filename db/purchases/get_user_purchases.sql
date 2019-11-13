@@ -3,3 +3,4 @@ purchases.purchase_id, purchases.streamer_id, streams.stream_desc, purchases.str
 FROM purchases
 INNER JOIN streams ON streams.stream_id = purchases.stream_id
 WHERE purchases.user_id = $1
+ORDER BY stream_time DESC

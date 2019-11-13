@@ -6,12 +6,25 @@ import {
   deleteStream
 } from "../../redux/Reducers/streamReducer";
 import Moment from "react-moment";
+import PendingPopup from "./PendingPopup";
 
 class PendingStreams extends Component {
   constructor() {
     super();
     this.state = {
-      streamId: ""
+      showPopup: false,
+      streamId: "",
+      purchasing: "",
+      streamCategory: "",
+      streamTitle: "",
+      streamDesc: "",
+      streamTime: "",
+      streamHours: "",
+      streamCountry: "",
+      streamStreet: "",
+      streamCity: "",
+      streamState: "",
+      streamZip: ""
     };
   }
   componentDidMount() {
@@ -24,6 +37,25 @@ class PendingStreams extends Component {
     console.log(this.state.streamId);
     await this.props.deleteStream(this.state.streamId);
     this.props.getPendingStreams();
+  };
+
+  togglePopup = e => {
+    console.log(e);
+    console.log(e.stream_id);
+    this.setState({
+      showPopup: !this.state.showPopup,
+      streamId: e.stream_id,
+      streamCategory: e.stream_category,
+      streamTitle: e.stream_title,
+      streamDesc: e.stream_desc,
+      streamTime: e.stream_time,
+      streamHours: e.stream_hours,
+      streamCountry: e.stream_country,
+      streamStreet: e.stream_street,
+      streamCity: e.stream_city,
+      streamState: e.stream_state,
+      streamZip: e.stream_zip
+    });
   };
   render() {
     const pendingMapped =
@@ -42,9 +74,28 @@ class PendingStreams extends Component {
               <Moment fromNow>{pending.stream_time}</Moment>
             </li>
             <li className="Mystreams-box-id">{pending.stream_hours}</li>
-            <li className="Mystreams-box-title">{pending.stream_city}</li>
-            <li className="Mystreams-box-id">{pending.stream_price}</li>
-            <button className="Mystreams-box-id">View/Edit</button>
+            <button
+              className="Mystreams-box-id"
+              onClick={() => this.togglePopup(pending)}
+            >
+              Review
+            </button>
+            {this.state.showPopup ? (
+              <PendingPopup
+                closePopup={this.togglePopup.bind(this)}
+                streamId={this.state.streamId}
+                streamCategory={this.state.streamCategory}
+                streamTitle={this.state.streamTitle}
+                streamDesc={this.state.streamDesc}
+                streamTime={this.state.streamTime}
+                streamHours={this.state.streamHours}
+                streamCountry={this.state.streamCountry}
+                streamStreet={this.state.streamStreet}
+                streamCity={this.state.streamCity}
+                streamState={this.state.streamState}
+                streamZip={this.state.streamZip}
+              />
+            ) : null}
             <button
               className="Mystreams-box-id"
               onClick={() => this.handleDelete(pending.stream_id)}
@@ -63,8 +114,6 @@ class PendingStreams extends Component {
           <li className="Mystreams-table-id">Time</li>
           <li className="Mystreams-table-title">Countdown</li>
           <li className="Mystreams-table-id">Hrs</li>
-          <li className="Mystreams-table-title">City</li>
-          <li className="Mystreams-table-id">Cost</li>
           <li className="Mystreams-table-id"></li>
           <li className="Mystreams-table-id"></li>
         </ul>

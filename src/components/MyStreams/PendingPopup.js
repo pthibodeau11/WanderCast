@@ -81,9 +81,12 @@ class PendingPopup extends Component {
                 <>
                   <label>Stream Category:</label>
                   <li>{this.state.streamCategory}</li>
-                  <button onClick={() => this.toggleEdit("category")}>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("category")}
+                  >
                     edit
-                  </button>
+                  </span>
                 </>
               ) : this.state.editField === "category" ? (
                 <>
@@ -93,31 +96,46 @@ class PendingPopup extends Component {
                     name="streamCategory"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
                 </>
               ) : (
                 <>
                   <label>Stream Category:</label>
                   <li>{this.state.streamCategory}</li>
-                  <button onClick={() => this.toggleEdit("category")}>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("category")}
+                  >
                     edit
-                  </button>
+                  </span>
                 </>
               )}
             </div>
+            {/* Title */}
             <div className="popup-body">
               {this.state.editField === "" ? (
                 <>
                   <label>Stream Title:</label>
                   <li>{this.state.streamTitle}</li>
-                  <button onClick={() => this.toggleEdit("title")}>edit</button>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("title")}
+                  >
+                    edit
+                  </span>
                 </>
               ) : this.state.editField === "title" ? (
                 <>
@@ -127,57 +145,97 @@ class PendingPopup extends Component {
                     name="streamTitle"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
                 </>
               ) : (
                 <>
                   <label>Stream Title:</label>
                   <li>{this.state.streamTitle}</li>
-                  <button onClick={() => this.toggleEdit("title")}>edit</button>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("title")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>
+            {/* Desc */}
             <div className="popup-desc">
               {this.state.editField === "" ? (
                 <>
-                  <label>Stream Title:</label>
-                  <li>{this.state.streamTitle}</li>
-                  <button onClick={() => this.toggleEdit("title")}>edit</button>
+                  <label>Stream Desc:</label>
+                  <text>{this.state.streamDesc}</text>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("desc")}
+                  >
+                    edit
+                  </span>
                 </>
-              ) : (
+              ) : this.state.editField === "desc" ? (
                 <>
-                  <label>Stream Title:</label>
+                  <label>Stream Desc:</label>
                   <input
-                    placeholder="new title"
-                    name="streamTitle"
+                    placeholder="new desc"
+                    name="streamDesc"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
+                </>
+              ) : (
+                <>
+                  <label>Stream Desc:</label>
+                  <li>{this.state.streamDesc}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("desc")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>
+            {/* Time */}
             <div className="popup-body">
               {this.state.editField === "" ? (
                 <>
                   <label>Stream Time:</label>
                   <li>{this.state.streamTime}</li>
-                  <button onClick={() => this.toggleEdit("time")}>edit</button>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("time")}
+                  >
+                    edit
+                  </span>
                 </>
-              ) : (
+              ) : this.state.editField === "time" ? (
                 <>
                   <label>Stream Time:</label>
                   <input
@@ -185,14 +243,31 @@ class PendingPopup extends Component {
                     name="streamTime"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
+                </>
+              ) : (
+                <>
+                  <label>Stream Time:</label>
+                  <li>{this.state.streamTime}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("time")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>
@@ -201,9 +276,14 @@ class PendingPopup extends Component {
                 <>
                   <label>Stream Length:</label>
                   <li>{this.state.streamHours}</li>
-                  <button onClick={() => this.toggleEdit("hours")}>edit</button>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("hours")}
+                  >
+                    edit
+                  </span>
                 </>
-              ) : (
+              ) : this.state.editField === "hours" ? (
                 <>
                   <label>Stream Length:</label>
                   <input
@@ -211,14 +291,31 @@ class PendingPopup extends Component {
                     name="streamHours"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
+                </>
+              ) : (
+                <>
+                  <label>Stream Length:</label>
+                  <li>{this.state.streamHours}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("hours")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>
@@ -227,11 +324,14 @@ class PendingPopup extends Component {
                 <>
                   <label>Stream Country:</label>
                   <li>{this.state.streamCountry}</li>
-                  <button onClick={() => this.toggleEdit("country")}>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("country")}
+                  >
                     edit
-                  </button>
+                  </span>
                 </>
-              ) : (
+              ) : this.state.editField === "country" ? (
                 <>
                   <label>Stream Country:</label>
                   <input
@@ -239,14 +339,31 @@ class PendingPopup extends Component {
                     name="streamCountry"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
+                </>
+              ) : (
+                <>
+                  <label>Stream Country:</label>
+                  <li>{this.state.streamCountry}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("country")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>
@@ -255,11 +372,14 @@ class PendingPopup extends Component {
                 <>
                   <label>Stream Street:</label>
                   <li>{this.state.streamStreet}</li>
-                  <button onClick={() => this.toggleEdit("street")}>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("street")}
+                  >
                     edit
-                  </button>
+                  </span>
                 </>
-              ) : (
+              ) : this.state.editField === "street" ? (
                 <>
                   <label>Stream Street:</label>
                   <input
@@ -267,14 +387,31 @@ class PendingPopup extends Component {
                     name="streamStreet"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
+                </>
+              ) : (
+                <>
+                  <label>Stream Street:</label>
+                  <li>{this.state.streamStreet}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("street")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>
@@ -283,9 +420,14 @@ class PendingPopup extends Component {
                 <>
                   <label>Stream City:</label>
                   <li>{this.state.streamCity}</li>
-                  <button onClick={() => this.toggleEdit("city")}>edit</button>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("city")}
+                  >
+                    edit
+                  </span>
                 </>
-              ) : (
+              ) : this.state.editField === "city" ? (
                 <>
                   <label>Stream City:</label>
                   <input
@@ -293,14 +435,31 @@ class PendingPopup extends Component {
                     name="streamCity"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
+                </>
+              ) : (
+                <>
+                  <label>Stream City:</label>
+                  <li>{this.state.streamCity}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("city")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>
@@ -308,25 +467,47 @@ class PendingPopup extends Component {
               {this.state.editField === "" ? (
                 <>
                   <label>Stream State:</label>
-                  <li>{this.state.streamCity}</li>
-                  <button onClick={() => this.toggleEdit("city")}>edit</button>
+                  <li>{this.state.streamState}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("state")}
+                  >
+                    edit
+                  </span>
                 </>
-              ) : (
+              ) : this.state.editField === "state" ? (
                 <>
-                  <label>Stream City:</label>
+                  <label>Stream State:</label>
                   <input
-                    placeholder="new city"
-                    name="streamCity"
+                    placeholder="new state"
+                    name="streamState"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
+                </>
+              ) : (
+                <>
+                  <label>Stream State:</label>
+                  <li>{this.state.streamState}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("state")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>
@@ -335,9 +516,14 @@ class PendingPopup extends Component {
                 <>
                   <label>Stream Zip:</label>
                   <li>{this.state.streamZip}</li>
-                  <button onClick={() => this.toggleEdit("zip")}>edit</button>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("zip")}
+                  >
+                    edit
+                  </span>
                 </>
-              ) : (
+              ) : this.state.editField === "zip" ? (
                 <>
                   <label>Stream Zip:</label>
                   <input
@@ -345,14 +531,31 @@ class PendingPopup extends Component {
                     name="streamZip"
                     onChange={this.handleInput}
                   ></input>
-                  <button
+                  <span
+                    className="popup-edit-button"
                     onClick={() => {
                       this.submitEdit();
                     }}
                   >
                     submit
-                  </button>
-                  <button onClick={() => this.toggleEdit("")}>close</button>
+                  </span>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("")}
+                  >
+                    close
+                  </span>
+                </>
+              ) : (
+                <>
+                  <label>Stream Zip:</label>
+                  <li>{this.state.streamZip}</li>
+                  <span
+                    className="popup-edit-button"
+                    onClick={() => this.toggleEdit("zip")}
+                  >
+                    edit
+                  </span>
                 </>
               )}
             </div>

@@ -85,12 +85,12 @@ class ApprovedStreams extends Component {
             </li>
             <li className="Mystreams-box-id">{approved.stream_hours}</li>
             <li className="Mystreams-box-id">{approved.stream_price}</li>
-            <button
-              className="Mystreams-box-id"
+            <span
+              className="popup-edit-button"
               onClick={() => this.togglePopup(approved)}
             >
               Review
-            </button>
+            </span>
             {this.state.showPopup ? (
               <ApprovedPopup
                 closePopup={this.togglePopup.bind(this)}
@@ -109,12 +109,12 @@ class ApprovedStreams extends Component {
                 purchasePrice={this.state.purchasePrice}
               />
             ) : null}
-            <button
-              className="Mystreams-box-id"
+            <span
+              className="popup-edit-button"
               onClick={() => this.handlePurchase(approved)}
             >
               Purchase
-            </button>
+            </span>
           </ul>
         );
       });

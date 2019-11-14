@@ -32,38 +32,47 @@ class PurchasePopup extends Component {
           <div className="popup-body">
             <label>Stream ID:</label>
             <li>{this.props.streamId}</li>
+            <br />
           </div>
           <div className="popup-body">
             <label>Stream Title:</label>
             <li>{this.props.streamTitle}</li>
+            <br />
           </div>
           <div className="popup-desc">
             <label>Stream Desc:</label>
-            <li>{this.props.streamDesc}</li>
+            <text>{this.props.streamDesc}</text>
+            <br />
           </div>
           <div className="popup-body">
             <label>Stream Date/Time:</label>
             <li>{this.props.streamTime}</li>
+            <br />
           </div>
           <div className="popup-body">
             <label>Stream Length:</label>
             <li>{this.props.streamHours}hrs</li>
+            <br />
           </div>
           <div className="popup-body">
             <label>Streamer ID:</label>
             <li>{this.props.streamerId}</li>
+            <br />
           </div>
           <div className="popup-body">
             <label>Purchase ID:</label>
             <li>{this.props.purchaseId}</li>
+            <br />
           </div>
           <div className="popup-body">
             <label>Purchase Date/Time:</label>
             <li>{this.props.purchaseTime}</li>
+            <br />
           </div>
           <div className="popup-body">
             <label>Purchase Price:</label>
             <li>{this.props.purchasePrice}</li>
+            <br />
           </div>
         </div>
       </div>

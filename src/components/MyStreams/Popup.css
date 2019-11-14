@@ -60,6 +60,9 @@
 .popup-body {
   display: flex;
   margin-left: 10px;
+  width: 100%;
+  justify-content: space-between;
+  white-space: nowrap;
 }
 
 .popup-desc {
@@ -70,27 +73,64 @@
   overflow: auto;
   list-style: none;
   margin-left: 10px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .popup-desc label {
   font-weight: bold;
-  width: 160px;
+  width: 200px;
   /* padding-right: 63px; */
   white-space: nowrap;
+  margin-left: 10px;
 }
 .popup-desc li {
+  list-style: none;
   margin-left: 8px;
-  width: 160px;
+  margin-right: 16px;
+  width: 350px;
+  height: 60px;
+  overflow: auto;
 }
 
 .popup-body label {
   font-weight: bold;
-  width: 160px;
+  width: 200px;
+  margin-left: 10px;
 }
 
 .popup-body li {
   list-style: none;
   margin-left: 8px;
   margin-right: 16px;
-  width: 160px;
+  width: 350px;
+}
+
+.popup-body input {
+  width: 200px;
+  margin-left: 8px;
+  margin-right: 12px;
+}
+
+.popup-desc input {
+  width: 200px;
+  margin-left: 8px;
+  margin-right: 12px;
+}
+
+.popup-edit-button {
+  cursor: pointer;
+  color: #f94659;
+  margin-right: 50px;
+  text-align: center;
+  width: 75px;
+  font-weight: 500;
+}
+
+.popup-desc text {
+  margin-left: 8px;
+  margin-right: 16px;
+  width: 350px;
+  height: 60px;
+  overflow: auto;
 }

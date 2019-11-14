@@ -72,12 +72,12 @@ class PurchasedStreams extends Component {
             <li className="Mystreams-box-title">{purchase.stream_city}</li>
 
             <li className="Mystreams-box-id">{purchase.stream_price}</li>
-            <button
-              className="Mystreams-box-id"
+            <span
+              className="popup-edit-button"
               onClick={() => this.togglePopup(purchase)}
             >
               Receipt
-            </button>
+            </span>
             {this.state.showPopup ? (
               <PurchasePopup
                 closePopup={this.togglePopup.bind(this)}
@@ -92,12 +92,12 @@ class PurchasedStreams extends Component {
                 purchasePrice={this.state.purchasePrice}
               />
             ) : null}
-            <button
-              className="Mystreams-box-id"
+            <span
+              className="popup-edit-button"
               onClick={() => this.watchStream(purchase.stream_live_link)}
             >
               Watch
-            </button>
+            </span>
           </ul>
         );
       });

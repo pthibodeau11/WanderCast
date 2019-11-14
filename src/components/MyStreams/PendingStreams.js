@@ -74,12 +74,12 @@ class PendingStreams extends Component {
               <Moment fromNow>{pending.stream_time}</Moment>
             </li>
             <li className="Mystreams-box-id">{pending.stream_hours}</li>
-            <button
-              className="Mystreams-box-id"
+            <span
+              className="popup-edit-button"
               onClick={() => this.togglePopup(pending)}
             >
               Review
-            </button>
+            </span>
             {this.state.showPopup ? (
               <PendingPopup
                 closePopup={this.togglePopup.bind(this)}
@@ -96,12 +96,12 @@ class PendingStreams extends Component {
                 streamZip={this.state.streamZip}
               />
             ) : null}
-            <button
-              className="Mystreams-box-id"
+            <span
+              className="popup-edit-button"
               onClick={() => this.handleDelete(pending.stream_id)}
             >
               Delete
-            </button>
+            </span>
           </ul>
         );
       });

@@ -43,18 +43,22 @@ export default function reducer(state = initialState, action) {
   switch (type) {
     case `${GET_ALL_PURCHASES}_FULFILLED`:
       return {
+        ...state,
         purchases: payload.data
       };
     case `${GET_USER_PURCHASE}_FULFILLED`:
       return {
+        ...state,
         purchase: payload.data
       };
     case `${GET_USER_PURCHASES}_FULFILLED`:
       return {
+        ...state,
         purchases: payload.data
       };
     case `${CREATE_NEW_PURCHASE}_FULFILLED`:
       return {
+        ...state,
         purchase: payload.data
       };
     default:

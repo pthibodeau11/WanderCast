@@ -94,6 +94,31 @@ module.exports = {
     console.log(pendingStreams);
     res.status(200).json(pendingStreams);
   },
+  adminEditPendingStream: async (req, res) => {
+    const {
+      streamerId,
+      streamPrice,
+      streamLiveLink,
+      streamEquipment,
+      isapproved
+    } = req.body;
+    const streamId = +req.params.streamId;
+    await req.app
+      .get("db")
+      .streams.admin_edit_stream(
+        streamId,
+        streamerId,
+        streamPrice,
+        streamLiveLink,
+        streamEquipment,
+        isapproved
+      );
+    const pendingStreams = await req.app
+      .get("db")
+      .streams.get_pending_streams(streamId);
+    console.log(pendingStreams);
+    res.status(200).json(pendingStreams);
+  },
   deleteStream: async (req, res) => {
     const streamId = +req.params.streamId;
     const streams = await req.app.get("db").streams.delete_stream(streamId);

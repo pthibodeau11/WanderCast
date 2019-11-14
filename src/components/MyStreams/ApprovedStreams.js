@@ -184,9 +184,6 @@ const mapStateToProps = reduxState => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    getApprovedStreams
-  }
-)(ApprovedStreams);
+export default connect(mapStateToProps, {
+  getApprovedStreams
+})(ApprovedStreams);

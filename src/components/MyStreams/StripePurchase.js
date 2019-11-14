@@ -17,7 +17,13 @@ class StripePurchase extends Component {
   handleToken = async (token, addresses) => {
     console.log(this.props);
     console.log(token);
-    const { streamPrice, streamTitle, streamId, streamerId } = this.props;
+    const {
+      streamPrice,
+      streamTitle,
+      streamId,
+      streamerId,
+      purchaseTimestamp
+    } = this.props;
     axios({
       method: "POST",
       url: "http://localhost:7777/checkout",
@@ -28,11 +34,20 @@ class StripePurchase extends Component {
       }
     }).then(response => {
       if (response.data.status === "success") {
-        toast("Success! Check emails for details", { type: "success" });
+        toast.success("Success! Check emails for details", {
+          type: "success",
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true
+        });
         this.props.createPurchase({
           stream_id: streamId,
           streamer_id: streamerId,
-          purchase_price: streamPrice
+          purchase_price: streamPrice,
+          purchase_timestamp: purchaseTimestamp
         });
         axios({
           method: "POST",
@@ -51,7 +66,15 @@ class StripePurchase extends Component {
           }
         });
       } else if (response.data.status === "failure") {
-        toast("Something went wrong", { type: "success" });
+        toast.error("Something went wrong", {
+          type: "success",
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true
+        });
       }
       console.log(response);
     });
@@ -81,9 +104,6 @@ const mapStateToProps = reduxState => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    createPurchase
-  }
-)(StripePurchase);
+export default connect(mapStateToProps, {
+  createPurchase
+})(StripePurchase);

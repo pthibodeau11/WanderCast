@@ -1,38 +1,71 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./admin.css";
-import { getAllStreams } from "../../redux/Reducers/streamReducer";
+import {
+  getAllStreams,
+  getPendingStreams
+} from "../../redux/Reducers/streamReducer";
+import StreamsPopup from "./StreamsPopup";
 import Moment from "react-moment";
 
 class AdminStreams extends Component {
-  async componentDidMount() {
-    await this.props.getAllStreams();
+  constructor() {
+    super();
+    this.state = {
+      showPopup: false,
+      streamId: "",
+      streamTitle: ""
+    };
+  }
+  componentDidMount() {
+    this.props.getAllStreams();
     console.log(this.props);
   }
+
+  togglePopup = e => {
+    console.log(e);
+    // console.log(e.stream_id);
+    this.setState({
+      showPopup: !this.state.showPopup,
+      streamId: e.stream_id,
+      streamTitle: e.stream_title
+    });
+  };
+
   render() {
     console.log(this.props.streams);
-    const streamsMapped =
-      this.props.streams &&
-      this.props.streams.map(stream => {
-        return (
-          <ul className="Admin-box">
-            <li className="Admin-box-id">{stream.stream_id}</li>
-            <li className="Admin-box-title">{stream.stream_title}</li>
-            <li className="Admin-box-id">
-              <Moment format="L">{stream.stream_time}</Moment>
-            </li>
-            <li className="Admin-box-id">
-              <Moment format="LT">{stream.stream_time}</Moment>
-            </li>
-            <li className="Admin-box-title">{stream.stream_city}</li>
-            <li className="Admin-box-id">
-              {JSON.stringify(stream.isapproved)}
-            </li>
-            <li className="Admin-box-id">{stream.purchase_id}</li>
-            <button className="Admin-box-id">Review</button>
-          </ul>
-        );
-      });
+    console.log(this.props.streams.pending);
+    console.log(this.props.pending);
+    const streamsMapped = this.props.streams.map(stream => {
+      return (
+        <ul className="Admin-box">
+          <li className="Admin-box-id">{stream.stream_id}</li>
+          <li className="Admin-box-title">{stream.stream_title}</li>
+          <li className="Admin-box-id">
+            <Moment format="L">{stream.stream_time}</Moment>
+          </li>
+          <li className="Admin-box-id">
+            <Moment format="LT">{stream.stream_time}</Moment>
+          </li>
+          <li className="Admin-box-title">{stream.stream_city}</li>
+          <li className="Admin-box-id">{JSON.stringify(stream.isapproved)}</li>
+          <li className="Admin-box-id">{stream.purchase_id}</li>
+          <span
+            className="popup-edit-button"
+            onClick={() => this.togglePopup(stream)}
+          >
+            Review
+          </span>
+          {this.state.showPopup ? (
+            <StreamsPopup
+              closePopup={this.togglePopup.bind(this)}
+              streamId={this.state.streamId}
+              streamTitle={this.state.streamTitle}
+            />
+          ) : null}
+        </ul>
+      );
+    });
     return (
       <div className="Admin-mappedlist">
         <h2>All streams</h2>
@@ -54,13 +87,12 @@ class AdminStreams extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    streams: reduxState.streamReducer.streams
+    streams: reduxState.streamReducer.streams,
+    pending: reduxState.streamReducer.pending
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    getAllStreams
-  }
-)(AdminStreams);
+export default connect(mapStateToProps, {
+  getAllStreams,
+  getPendingStreams
+})(AdminStreams);

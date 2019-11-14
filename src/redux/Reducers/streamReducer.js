@@ -2,7 +2,7 @@ import axios from "axios";
 import newstream from "../../components/NewStream/newstream";
 
 const initialState = {
-  streams: { approved: [], pending: [] },
+  streams: [{ approved: [], pending: [] }],
   stream: {}
 };
 
@@ -11,6 +11,7 @@ const GET_ALL_STREAMS = "GET_ALL_STREAMS";
 const GET_ONE_STREAM = "GET_ONE_STREAM";
 const GET_PENDING_STREAMS = "GET_PENDING_STREAMS";
 const EDIT_PENDING_STREAM = "EDIT_PENDING_STREAM";
+const ADMIN_EDIT_PENDING_STREAM = "ADMIN_EDIT_PENDING_STREAM";
 const GET_APPROVED_STREAMS = "GET_APPROVED_STREAMS";
 const DELETE_STREAM = "DELETE_STREAM";
 
@@ -48,6 +49,13 @@ export function editPendingStream(streamId, editedStream) {
   };
 }
 
+export function adminEditPendingStream(streamId, editedStream) {
+  return {
+    type: ADMIN_EDIT_PENDING_STREAM,
+    payload: axios.put(`/api/admin/streams/${streamId}`, editedStream)
+  };
+}
+
 export function getApprovedStreams() {
   return {
     type: GET_APPROVED_STREAMS,
@@ -72,9 +80,11 @@ export default function reducer(state = initialState, action) {
         streams: payload.data
       };
     case `${GET_ALL_STREAMS}_FULFILLED`:
+      let allStreams = { ...state.streams };
+      allStreams = payload.data;
       return {
         ...state,
-        streams: payload.data
+        streams: allStreams
       };
     case `${GET_ONE_STREAM}_FULFILLED`:
       return {
@@ -95,6 +105,16 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         streams: newStreams
+      };
+    case `${ADMIN_EDIT_PENDING_STREAM}_FULFILLED`:
+      let adminNewStreams = { ...state.streams };
+      console.log(adminNewStreams);
+      adminNewStreams.pending = payload.data;
+      console.log(adminNewStreams);
+
+      return {
+        ...state,
+        streams: adminNewStreams
       };
     case `${GET_APPROVED_STREAMS}_FULFILLED`:
       return {

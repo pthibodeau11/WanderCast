@@ -74,6 +74,8 @@ app.get(`/api/streams/pending`, auth.usersOnly, streamController.getPendingStrea
 app.get(`/api/streams/approved`, auth.usersOnly, streamController.getApprovedStreams); // get all created streams by user that are approved
 // prettier-ignore
 app.put(`/api/streams/:streamId`, auth.usersOnly, streamController.editPendingStream) // user edits stream they created
+// prettier-ignore
+app.put(`/api/admin/streams/:streamId`, auth.adminsOnly, streamController.adminEditPendingStream) // admin approves stream
 app.get(`/api/stream`, auth.adminsOnly, streamController.getAllStreams); // get list of all streams
 // prettier-ignore
 app.get(`/api/streams/:streamId`, auth.adminsOnly, streamController.getOneStream); //get one stream

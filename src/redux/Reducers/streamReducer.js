@@ -113,8 +113,7 @@ export default function reducer(state = initialState, action) {
       console.log(adminNewStreams);
 
       return {
-        ...state,
-        streams: adminNewStreams
+        ...state
       };
     case `${GET_APPROVED_STREAMS}_FULFILLED`:
       return {

@@ -23,7 +23,6 @@ class login extends Component {
   };
 
   render() {
-    console.log(this.props.userId);
     if (this.props.userId) return <Redirect to="/" />;
 
     return (
@@ -64,9 +63,6 @@ const mapStateToProps = reduxState => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    loginUser
-  }
-)(login);
+export default connect(mapStateToProps, {
+  loginUser
+})(login);

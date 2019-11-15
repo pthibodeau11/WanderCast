@@ -43,7 +43,7 @@ class StreamsPopup extends Component {
       isapproved: isapproved
     });
     this.props.getAllStreams();
-    // this.toggleEdit("");
+    this.props.closePopup();
   };
   render() {
     return (

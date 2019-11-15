@@ -49,3 +49,12 @@
   margin-top: 10px;
   width: 150px;
 }
+
+.Google-location-search {
+  display: flex;
+  flex-direction: column;
+}
+
+.Google-location-input {
+  display: none;
+}

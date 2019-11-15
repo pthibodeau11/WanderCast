@@ -26,7 +26,12 @@ class AdminStreams extends Component {
     console.log(e);
     // console.log(e.stream_id);
     this.setState({
-      showPopup: !this.state.showPopup,
+      showPopup: !this.state.showPopup
+    });
+  };
+
+  handleSelect = e => {
+    this.setState({
       streamId: e.stream_id,
       streamTitle: e.stream_title
     });
@@ -52,7 +57,10 @@ class AdminStreams extends Component {
           <li className="Admin-box-id">{stream.purchase_id}</li>
           <span
             className="popup-edit-button"
-            onClick={() => this.togglePopup(stream)}
+            onClick={() => {
+              this.handleSelect(stream);
+              this.togglePopup();
+            }}
           >
             Review
           </span>

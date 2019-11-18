@@ -74,7 +74,7 @@ class Header extends React.Component {
             <>
               <div className="Browser-view-links">
                 <Link to={"/newstream"}>
-                  <li className="Nav-link">New request</li>
+                  <li className="Nav-link-new">+ New request</li>
                 </Link>
                 <Link to={"/profile"}>
                   <li className="Nav-link">Profile</li>
@@ -98,7 +98,7 @@ class Header extends React.Component {
               </div>
               <div className="Responsive-view-links">
                 <Link to={"/newstream"}>
-                  <li className="Nav-link">New request</li>
+                  <li className="Nav-link-new">+ New request</li>
                 </Link>
                 <img src={menu} alt="ham_menu" onClick={this.handleClick} />
                 <menu id="menu" ref={this.state.menuRef}>

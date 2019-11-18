@@ -61,24 +61,57 @@ class AlterProfile extends Component {
     return (
       <>
         <div className="AlterProfile-background">
-          <label>Enter New First Name:</label>
-          <input
-            name="user_first_name"
-            onChange={this.handleInput}
-            placeholder={this.props.user[0].user_first_name}
-          />
-          <label>Enter New Last Name:</label>
-          <input name="user_last_name" onChange={this.handleInput} />
-          <label>Enter New Birth Date</label>
-          <input name="user_birth_date" onChange={this.handleInput} />
-          <label>Upload New Profile Image</label>
-          <input type="file" placeholder="upload" onChange={this.handleImage} />
-          <Link to="/profile">
-            <button onClick={this.handleEditSubmit}>Submit Changes</button>
-          </Link>
-          <Link to="/profile">
-            <button>Cancel</button>
-          </Link>
+          <div className="AlterProfile-container">
+            <h1>Edit Profile</h1>
+            {/* <label>Enter New First Name:</label> */}
+            <input
+              placeholder="enter new first name"
+              className="AlterProfile-input"
+              name="user_first_name"
+              onChange={this.handleInput}
+            />
+            {/* <label>Enter New Last Name:</label> */}
+            <input
+              placeholder="enter new last name"
+              className="AlterProfile-input"
+              name="user_last_name"
+              onChange={this.handleInput}
+            />
+            {/* <label>Enter New Birth Date</label> */}
+            <input
+              placeholder="enter new birth date"
+              className="AlterProfile-input"
+              name="user_birth_date"
+              onChange={this.handleInput}
+            />
+            <label>Upload New Profile Image</label>
+            <label for="file-upload" className="Custom-file-upload">
+              Browse
+            </label>
+            <br />
+            <br />
+            {/* <input for="file-upload" placeholder="upload"></input> */}
+            <input
+              id="file-upload"
+              className="Default-file-upload"
+              type="file"
+              placeholder="upload"
+              onChange={this.handleImage}
+            />
+            <div className="AlterProfile-submit-buttons">
+              <Link to="/profile">
+                <button
+                  className="AlterProfile-button"
+                  onClick={this.handleEditSubmit}
+                >
+                  Submit
+                </button>
+              </Link>
+              <Link to="/profile">
+                <button className="AlterProfile-button">Cancel</button>
+              </Link>
+            </div>
+          </div>
         </div>
       </>
     );

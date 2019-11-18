@@ -9,7 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 87px;
   padding-top: 20px;
   padding-right: 18px;
 }
@@ -67,6 +67,19 @@
   font-weight: 550;
   letter-spacing: 1px;
   color: #f94659;
+}
+
+.Nav-link-new {
+  margin-right: 23px;
+  margin-top: 5px;
+  padding: 7px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  color: #f94659;
+  border: solid 3px #f94659;
+  border-radius: 4px;
 }
 
 .Nav-link-signup {
@@ -152,13 +165,18 @@
 @media (max-width: 1100px) {
   #menu {
     right: 1%;
-    top: 65%;
+    top: 70%;
     width: 190px;
     text-align: right;
     padding-right: 10px;
   }
   .Nav-link {
     padding-top: 0px;
+  }
+  .Nav-link-new {
+    /* padding-top: 0px; */
+    margin-bottom: 1px;
+    margin-top: 0px;
   }
   .drop-down a {
     width: 0px;
@@ -188,7 +206,7 @@
 
 @media (max-width: 800px) {
   #menu {
-    top: 90%;
+    top: 100%;
     width: 95%;
     text-align: center;
   }
@@ -201,11 +219,15 @@
   .Nav-link {
     padding-top: 0px;
   }
+  .Nav-link-new {
+    /* padding-top: 0px; */
+    margin-bottom: 1px;
+  }
   .Nav-links {
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-left: 55px;
+    margin-left: 50px;
   }
   .Main-header-logo {
     margin-left: 45px;

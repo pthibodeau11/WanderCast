@@ -137,7 +137,7 @@ class ApprovedStreams extends Component {
         </div> */}
         {this.state.purchasing === "default" ? (
           <div className="Mystreams-mappedlist">
-            <h2>My Approved Streams</h2>
+            {/* <h2>My Approved Streams</h2> */}
             <ul className="Mystreams-table">
               <li className="Mystreams-table-column">Title</li>
               <li className="Mystreams-table-id">Date</li>
@@ -159,7 +159,7 @@ class ApprovedStreams extends Component {
           />
         ) : (
           <div className="Mystreams-mappedlist">
-            <h2>My Approved Streams</h2>
+            {/* <h2>My Approved Streams</h2> */}
             <ul className="Mystreams-table">
               <li className="Mystreams-table-column">Title</li>
               <li className="Mystreams-table-id">Date</li>

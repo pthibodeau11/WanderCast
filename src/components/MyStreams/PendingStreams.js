@@ -107,7 +107,7 @@ class PendingStreams extends Component {
       });
     return (
       <div className="Mystreams-mappedlist">
-        <h2>My Pending Streams</h2>
+        {/* <h2>My Pending Streams</h2> */}
         <ul className="Mystreams-table">
           <li className="Mystreams-table-column">Title</li>
           <li className="Mystreams-table-id">Date</li>

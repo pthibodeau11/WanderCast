@@ -26,7 +26,10 @@ export default class MainBody extends Component {
           <div className="Diff-box">
             <img src={personal} alt="icon #2" />
             <h1>Private</h1>
-            <p>Talk 1-on-1 directly to your streamer or invite your friends</p>
+            <p>
+              Our live-streams are private and password protected between you
+              and the streamer.
+            </p>
           </div>
           <div className="Diff-box">
             <img src={quality} alt="icon #3" />

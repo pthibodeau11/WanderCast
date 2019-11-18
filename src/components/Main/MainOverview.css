@@ -77,12 +77,13 @@
     display: flex;
     justify-content: center;
     height: 375px;
+    padding-top: 75px;
   }
   .Main-text {
     justify-content: normal;
     text-align: center;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 55px;
     width: 605px;
     overflow: auto;
   }

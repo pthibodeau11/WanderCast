@@ -103,7 +103,7 @@ class PurchasedStreams extends Component {
       });
     return (
       <div className="Mystreams-mappedlist">
-        <h2>My Purchased Streams</h2>
+        {/* <h2>My Purchased Streams</h2> */}
         <div className="Mystreams-video">
           <Iframe
             className="Stream-box"

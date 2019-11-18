@@ -111,86 +111,95 @@ class newstream extends Component {
             <h1>New stream request form</h1>
             <br />
             <br />
-            <div className="Newstream-field">
-              <label>Stream request category:</label>
-              <input name="stream_category" onChange={this.handleInput} />
-            </div>
-            <br />
-            <div className="Newstream-field">
-              <label>Stream title / brief description of request</label>
-              <br />
-              <textarea name="stream_title" onChange={this.handleInput} />
-            </div>
-            <br />
-            <div className="Newstream-field">
-              <label>Describe your stream request in detail:</label>
-              <br />
-              <textarea name="stream_desc" onChange={this.handleInput} />
-            </div>
-            <br />
-            <div className="Newstream-field">
-              <label>Day/time you need the streamer:</label>
+            <div className="Newstream-form-main">
+              <div className="Newstream-left">
+                <div className="Newstream-field">
+                  <label>Stream request category:</label>
+                  <input name="stream_category" onChange={this.handleInput} />
+                </div>
+                <br />
+                <div className="Newstream-field">
+                  <label>Stream title / brief description of request</label>
+                  <br />
+                  <textarea name="stream_title" onChange={this.handleInput} />
+                </div>
+                <br />
+                <div className="Newstream-field">
+                  <label>Describe your stream request in detail:</label>
+                  <br />
+                  <textarea name="stream_desc" onChange={this.handleInput} />
+                </div>
+                <br />
+              </div>
 
-              <DatePicker
-                selected={this.state.stream_time}
-                onChange={this.handleChange}
-                showTimeSelect
-                dateFormat="MMMM d, yyyy h:mm aa"
-              />
-            </div>
-            <br />
-            <div className="Newstream-field">
-              <label>Hours you will need the streamer:</label>
-              <div className="Newstream-hours">
-                <input name="stream_hours" onChange={this.handleInput} />
-                <p>hrs</p>
+              <div className="Newstream-right">
+                <div className="Newstream-field">
+                  <label>Day/time you need the streamer:</label>
+
+                  <DatePicker
+                    selected={this.state.stream_time}
+                    onChange={this.handleChange}
+                    showTimeSelect
+                    dateFormat="MMMM d, yyyy h:mm aa"
+                  />
+                </div>
+                <br />
+                <div className="Newstream-field">
+                  <label>Hours you will need the streamer:</label>
+                  <div className="Newstream-hours">
+                    <input name="stream_hours" onChange={this.handleInput} />
+                    <p>hrs</p>
+                  </div>
+                </div>
+                {/* <label className="Stream-location-label">
+                  Stream location:
+                </label> */}
+                <form className="Google-location-search">
+                  <input
+                    id="autocomplete"
+                    className="input-field"
+                    ref="input"
+                    type="text"
+                  />
+                  <input
+                    className="Google-location-input"
+                    name={"name"}
+                    value={this.state.stream_name}
+                    placeholder={"Name"}
+                    onChange={this.handleChange}
+                  />
+                  <input
+                    className="Google-location-input"
+                    name={"street_address"}
+                    value={this.state.stream_street}
+                    placeholder={"Street Address"}
+                    onChange={this.handleChange}
+                  />
+                  <input
+                    className="Google-location-input"
+                    name={"city"}
+                    value={this.state.stream_city}
+                    placeholder={"City"}
+                    onChange={this.handleChange}
+                  />
+                  <input
+                    className="Google-location-input"
+                    name={"state"}
+                    value={this.state.stream_state}
+                    placeholder={"State"}
+                    onChange={this.handleChange}
+                  />
+                  <input
+                    className="Google-location-input"
+                    name={"zip_code"}
+                    value={this.state.stream_zip}
+                    placeholder={"Zipcode"}
+                    onChange={this.handleChange}
+                  />
+                </form>
+                <br />
               </div>
             </div>
-            <label>Stream location:</label>
-            <form className="Google-location-search">
-              <input
-                id="autocomplete"
-                className="input-field"
-                ref="input"
-                type="text"
-              />
-              <input
-                className="Google-location-input"
-                name={"name"}
-                value={this.state.stream_name}
-                placeholder={"Name"}
-                onChange={this.handleChange}
-              />
-              <input
-                className="Google-location-input"
-                name={"street_address"}
-                value={this.state.stream_street}
-                placeholder={"Street Address"}
-                onChange={this.handleChange}
-              />
-              <input
-                className="Google-location-input"
-                name={"city"}
-                value={this.state.stream_city}
-                placeholder={"City"}
-                onChange={this.handleChange}
-              />
-              <input
-                className="Google-location-input"
-                name={"state"}
-                value={this.state.stream_state}
-                placeholder={"State"}
-                onChange={this.handleChange}
-              />
-              <input
-                className="Google-location-input"
-                name={"zip_code"}
-                value={this.state.stream_zip}
-                placeholder={"Zipcode"}
-                onChange={this.handleChange}
-              />
-            </form>
-            <br />
             <div className="Submit-buttons">
               <button name="request" onClick={this.handleSubmit}>
                 Submit

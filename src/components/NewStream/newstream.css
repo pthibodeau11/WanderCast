@@ -14,12 +14,18 @@
 
 .Newstream-container {
   z-index: 10000;
-  width: 300px;
+  width: 720px;
   display: flex;
   flex-direction: column;
   padding-top: 75px;
   position: absolute;
   top: 10%;
+}
+
+.Newstream-form-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .Newstream-field {
@@ -96,7 +102,7 @@
 
 .Submit-buttons {
   position: absolute;
-  bottom: -15%;
+  bottom: -30%;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -117,4 +123,21 @@
   border: none;
   box-shadow: 5px 5px 5px -5px rgb(0, 0, 0, 0.56);
   cursor: pointer;
+}
+
+.Stream-location-label {
+  font-weight: bold;
+  width: 290px;
+  text-align: left;
+}
+
+@media (max-width: 1000px) {
+  .Newstream-container {
+    width: 300px;
+  }
+  .Newstream-form-main {
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./login.css";
 import { loginUser } from "../../redux/Reducers/authReducer";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class login extends Component {
   state = {
@@ -29,6 +29,13 @@ class login extends Component {
       <>
         <div className="Login-background">
           <div className="Login-container">
+            <h1>Log into WanderCast </h1>
+            <br />
+            <label>
+              Or <Link to="/signup">Create Account</Link>
+            </label>
+            <br />
+            <br />
             <input
               placeholder="email"
               className="Login-input"

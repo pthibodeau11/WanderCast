@@ -9,13 +9,16 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  padding-top: 170px;
+  overflow: auto;
 }
 
 .Login-container {
   z-index: 10000;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .Login-input {
@@ -24,7 +27,7 @@
   height: 20px;
   word-wrap: break-word;
   font-family: "Roboto", sans-serif;
-  width: 175px;
+  width: 225px;
   border: none;
   align-content: center;
   border-bottom: 1px solid grey;
@@ -47,4 +50,10 @@
   border: none;
   box-shadow: 5px 5px 5px -5px rgb(0, 0, 0, 0.56);
   cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .Login-background {
+    padding-top: 120px;
+  }
 }

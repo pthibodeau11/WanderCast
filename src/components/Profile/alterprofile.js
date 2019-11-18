@@ -18,6 +18,7 @@ class AlterProfile extends Component {
 
   componentDidMount() {
     this.props.viewProfile();
+    console.log(this.props);
   }
 
   handleInput = e => {
@@ -90,10 +91,7 @@ const mapStateToProps = reduxState => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    editProfile,
-    viewProfile
-  }
-)(AlterProfile);
+export default connect(mapStateToProps, {
+  editProfile,
+  viewProfile
+})(AlterProfile);

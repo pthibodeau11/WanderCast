@@ -75,11 +75,11 @@ function Header(props) {
           </>
         ) : (
           <>
-            <Link to={"/signup"}>
-              <li className="Nav-link">Sign Up</li>
-            </Link>
             <Link to={"/login"}>
-              <li className="Nav-link">Login</li>
+              <li className="Nav-link">LOGIN</li>
+            </Link>
+            <Link to={"/signup"}>
+              <li className="Nav-link-signup">GET STARTED</li>
             </Link>
           </>
         )}
@@ -96,10 +96,7 @@ const mapStateToProps = reduxState => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    {
-      logoutUser
-    }
-  )(Header)
+  connect(mapStateToProps, {
+    logoutUser
+  })(Header)
 );

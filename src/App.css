@@ -2,10 +2,21 @@
   text-align: center;
   background: #faf1f2;
   min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .App-logo {
   height: 40vmin;
+}
+
+.App h1 {
+  font-size: 22px;
+}
+
+.App input {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .App-header {

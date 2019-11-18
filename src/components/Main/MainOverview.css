@@ -2,7 +2,7 @@
   width: 100%;
   height: 700px;
   position: top;
-  margin-top: 30px;
+  margin-top: 60px;
   background-image: url("../../background_landing.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -17,20 +17,21 @@
   align-items: flex-start;
   text-align: left;
   height: 100%;
-  width: 685px;
+  width: 680px;
   margin: 0;
 }
 
 .Main-text h1 {
-  font-size: 45px;
+  font-size: 44px;
   line-height: 2.9rem;
-  padding-bottom: 15px;
+  /* padding-bottom: 5px; */
   margin-left: 60px;
   margin-bottom: 0;
 }
 
 .Main-text p {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.65rem;
   padding-bottom: 10px;
   color: #045da5;
   font-weight: 400;
@@ -75,9 +76,15 @@
     background-image: url("../../plain_background_landing.jpg");
     display: flex;
     justify-content: center;
+    height: 375px;
   }
   .Main-text {
+    justify-content: normal;
     text-align: center;
+    align-items: center;
+    padding-top: 100px;
+    width: 98%;
+    overflow: auto;
   }
   .Main-text h1 {
     font-size: 35px;
@@ -85,6 +92,21 @@
   }
   .Main-text p {
     font-size: 18px;
+    margin: 0 15px 0 15px;
+  }
+  .Tech-icons {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .Main-text h1 {
+    font-size: 21px;
+    margin: 0 15px 0 15px;
+    line-height: 24px;
+  }
+  .Main-text p {
+    font-size: 14px;
     margin: 0 15px 0 15px;
   }
 }

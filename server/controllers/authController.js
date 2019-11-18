@@ -1,14 +1,14 @@
 const bcrypt = require("bcryptjs");
 
 module.exports = {
-  register: async (req, res) => {
+  register: async (req, res, next) => {
     const {
       user_first_name,
       user_last_name,
       user_birth_date,
       user_profile_img,
       user_email,
-      password
+      user_password
     } = req.body;
     const db = req.app.get("db");
 
@@ -18,7 +18,7 @@ module.exports = {
       res.status(409).json({ message: "User already exists" });
     } else {
       const salt = bcrypt.genSaltSync(10);
-      const hash = bcrypt.hashSync(password, salt);
+      const hash = bcrypt.hashSync(user_password, salt);
 
       const newUser = await db.auth.register_user(
         user_first_name,
@@ -40,6 +40,7 @@ module.exports = {
 
       res.status(200).json(req.session.user);
     }
+    next();
   },
   login: async (req, res) => {
     const { user_email, user_password } = req.body;

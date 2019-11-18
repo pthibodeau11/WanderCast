@@ -11,6 +11,7 @@ class profile extends Component {
   }
 
   render() {
+    console.log(this.props);
     console.log(this.props.user[0] && this.props.user[0].isstreamer);
     let streamer = "";
     if (!(this.props.user[0] && this.props.user[0].isstreamer)) {
@@ -77,9 +78,6 @@ const mapStateToProps = reduxState => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    viewProfile
-  }
-)(profile);
+export default connect(mapStateToProps, {
+  viewProfile
+})(profile);

@@ -22,15 +22,6 @@
   height: 35px;
 }
 
-.Stream-box {
-  background: #f5f7f9;
-  border: 1.5px solid #045da5;
-  border-radius: 7px;
-  box-shadow: 7px 7px 7px -5px rgb(0, 0, 0, 0.56);
-  padding: 1px;
-  margin-top: 50px;
-}
-
 .Mystreams-header button {
   margin-left: 10px;
   margin-right: 10px;
@@ -94,8 +85,23 @@
 }
 
 .Mystreams-video {
-  display: flex;
   justify-content: center;
+  padding-bottom: 32.25%;
+  position: relative;
+  display: block;
+  width: 57%;
+}
+
+.Stream-box {
+  background: #f5f7f9;
+  border: 1.5px solid #045da5;
+  border-radius: 7px;
+  box-shadow: 7px 7px 7px -5px rgb(0, 0, 0, 0.56);
+  padding: 1px;
+  margin-top: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .Mystreams-box-title {
@@ -113,6 +119,9 @@
   max-height: 100%;
   width: 100%;
   overflow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Mystreams-header button {
@@ -140,4 +149,10 @@
   border: none;
   box-shadow: 5px 5px 5px -5px rgb(0, 0, 0, 0.56);
   cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .Mystreams-background {
+    padding-top: 55px;
+  }
 }

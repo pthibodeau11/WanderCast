@@ -21,11 +21,19 @@
 
 .Diff-box img {
   height: 45px;
+  margin-bottom: 3px;
 }
 
-.Diff-box h1,
-p {
+.Diff-box h1 {
   margin: 0;
+  margin-bottom: 3px;
+  /* color: #045da5; */
+}
+
+.Diff-box p {
+  margin: 0;
+  margin-bottom: 3px;
+  /* color: #045da5; */
 }
 
 .Partner-logos {
@@ -51,11 +59,15 @@ p {
 }
 
 @media (max-width: 1000px) {
+  .Powered-by {
+    display: none;
+  }
   .Partner-logos {
     display: none;
   }
   .Diff-box {
-    width: 150px;
+    width: 200px;
+    margin-bottom: 30px;
   }
 
   .Diff-box img {
@@ -70,8 +82,9 @@ p {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .Differentiators {
     flex-direction: column;
+    padding-top: 100px;
   }
 }

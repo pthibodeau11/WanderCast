@@ -8,7 +8,7 @@ export default class MainOverview extends Component {
       <div className="Main-overview">
         <section className="Main-text">
           <h1>
-            Virtually travel the world. Hire a personal live-streamer.
+            Hire your own live-streamer
             {/* <span style={{ textDecoration: "underline" }}>anywhere</span>{" "} */}
           </h1>
           <p className="Main-sub-text">
@@ -23,7 +23,7 @@ export default class MainOverview extends Component {
             </Link>
           </div>
           <p></p>
-          <p className="Tech-icons"> 4K | LIVE | Facebook | 360 | VR </p>
+          {/* <p className="Tech-icons"> 4K | LIVE | Facebook | 360 | VR </p> */}
         </section>
       </div>
     );

@@ -107,15 +107,17 @@ class PurchasedStreams extends Component {
         <div className="Mystreams-video">
           <Iframe
             className="Stream-box"
-            url={`https://video.ibm.com/combined-embed/${this.state.videoLink}?videos=0`}
+            url={`https://video.ibm.com/embed/${this.state.videoLink}?videos=0`}
             styles={{ border: "1px black" }}
             webkitallowfullscreen
             allowfullscreen
             frameborder="no"
-            width="952"
-            height="356"
+            width="100%"
+            height="100%"
           ></Iframe>
         </div>
+        <br />
+        <br />
         <br />
         <br />
         <ul className="Mystreams-table">
@@ -141,9 +143,6 @@ const mapStateToProps = reduxState => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    getUserPurchases
-  }
-)(PurchasedStreams);
+export default connect(mapStateToProps, {
+  getUserPurchases
+})(PurchasedStreams);

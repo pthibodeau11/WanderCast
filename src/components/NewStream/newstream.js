@@ -35,9 +35,10 @@ class newstream extends Component {
   }
 
   componentDidMount() {
+    const options = { types: ["address"] };
     this.autocomplete = new google.maps.places.Autocomplete(
       document.getElementById("autocomplete"),
-      {}
+      options
     );
 
     this.autocomplete.addListener("place_changed", this.handlePlaceSelect);
@@ -51,15 +52,24 @@ class newstream extends Component {
     let addressObject = this.autocomplete.getPlace();
     let address = addressObject.address_components;
     console.log(address);
-    this.setState({
-      stream_name: addressObject.name,
-      stream_country: address[6].long_name,
-      stream_street: `${address[0].long_name} ${address[1].long_name}`,
-      stream_city: address[3].short_name,
-      stream_state: address[5].short_name,
-      stream_zip: address[7].short_name,
-      googleMapLink: addressObject.url
-    });
+    try {
+      this.setState({
+        stream_name: addressObject.name,
+        stream_country: address[6].long_name,
+        stream_street: `${address[0].long_name} ${address[1].long_name}`,
+        stream_city: address[3].short_name,
+        stream_state: address[5].short_name,
+        stream_zip: address[7].short_name,
+        googleMapLink: addressObject.url
+      });
+    } catch (e) {
+      console.log(e);
+      alert("Whoops! Please enter a specific address");
+    }
+    // .catch(error => {
+    //   alert("Whoops! Please select an exact address");
+    //   console.log(error);
+    // });
   };
 
   handleSubmit = e => {
@@ -99,21 +109,27 @@ class newstream extends Component {
         <div className="Newstream-background">
           <div className="Newstream-container">
             <h1>New stream request form</h1>
+            <br />
+            <br />
             <div className="Newstream-field">
-              <label>Select/enter a category for this stream request:</label>
+              <label>Stream request category:</label>
               <input name="stream_category" onChange={this.handleInput} />
             </div>
+            <br />
             <div className="Newstream-field">
               <label>Stream title / brief description of request</label>
+              <br />
               <textarea name="stream_title" onChange={this.handleInput} />
             </div>
+            <br />
             <div className="Newstream-field">
               <label>Describe your stream request in detail:</label>
+              <br />
               <textarea name="stream_desc" onChange={this.handleInput} />
             </div>
-
+            <br />
             <div className="Newstream-field">
-              <label>What day/time will the streamer need to arrive?</label>
+              <label>Day/time you need the streamer:</label>
 
               <DatePicker
                 selected={this.state.stream_time}
@@ -122,42 +138,15 @@ class newstream extends Component {
                 dateFormat="MMMM d, yyyy h:mm aa"
               />
             </div>
+            <br />
             <div className="Newstream-field">
-              <label>How many hours will you need the streamer?</label>
+              <label>Hours you will need the streamer:</label>
               <div className="Newstream-hours">
                 <input name="stream_hours" onChange={this.handleInput} />
                 <p>hrs</p>
               </div>
             </div>
-            <br />
             <label>Stream location:</label>
-            {/* <div className="Newstream-location-fields">
-              <input
-                placeholder="Country"
-                name="stream_country"
-                onChange={this.handleInput}
-              />
-              <input
-                placeholder="Street"
-                name="stream_street"
-                onChange={this.handleInput}
-              />
-              <input
-                placeholder="State"
-                name="stream_state"
-                onChange={this.handleInput}
-              />
-              <input
-                placeholder="City"
-                name="stream_city"
-                onChange={this.handleInput}
-              />
-              <input
-                placeholder="Zip"
-                name="stream_zip"
-                onChange={this.handleInput}
-              />
-            </div> */}
             <form className="Google-location-search">
               <input
                 id="autocomplete"
@@ -202,13 +191,14 @@ class newstream extends Component {
               />
             </form>
             <br />
-            <br />
-            <button name="request" onClick={this.handleSubmit}>
-              Submit Stream Request
-            </button>
-            <Link to="/mystreams">
-              <button>Cancel</button>
-            </Link>
+            <div className="Submit-buttons">
+              <button name="request" onClick={this.handleSubmit}>
+                Submit
+              </button>
+              <Link to="/mystreams">
+                <button>Cancel</button>
+              </Link>
+            </div>
           </div>
         </div>
       </>

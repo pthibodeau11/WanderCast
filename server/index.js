@@ -47,7 +47,8 @@ massive(CONNECTION_STRING).then(db => {
 
 // ENDPOINTS
 // AUTH ENDPOINTS
-app.post(`/auth/user/new`, authController.register); //this will be for registering
+// prettier-ignore
+app.post(`/auth/user/new`, authController.register, appController.createRegisterApp); //this will be for registering
 app.post(`/auth/user/login`, authController.login); //login
 app.post(`/auth/user/logout`, authController.logout); //logout
 

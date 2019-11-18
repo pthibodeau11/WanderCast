@@ -32,5 +32,23 @@ module.exports = {
         "false"
       );
     return res.status(200).send(newApp);
+  },
+  createRegisterApp: async (req, res) => {
+    const { userId } = req.session.user;
+
+    const newRegisterApp = await req.app
+      .get("db")
+      .apps.create_new_app(
+        userId,
+        "new account",
+        "new account",
+        "new account",
+        "new account",
+        "new account",
+        "new account",
+        "false",
+        "false"
+      );
+    return res.status(200).send(newRegisterApp);
   }
 };

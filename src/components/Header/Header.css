@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 100000;
   background-color: #dff5f7;
   display: flex;
   flex-direction: row;
@@ -84,9 +84,122 @@
   border-bottom: solid #f94659;
 }
 
+.Browser-view-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.Responsive-view-links {
+  display: none;
+}
+
+.Responsive-view-links img {
+  width: 34px;
+  cursor: pointer;
+  height: 32px;
+}
+
+.drop-down {
+  display: none;
+  height: 0px;
+}
+#menu {
+  /* transition: height 0.8s; */
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  border-radius: 4px;
+}
+
+.menu-open {
+  transition: height 0.1s;
+  width: 170px;
+  height: 120px;
+  background-color: #f94659;
+  /* color: white; */
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.menu-open .drop-down {
+  transition: height 0.8s;
+  display: block;
+  color: transparent;
+}
+
+.menu-close .drop-down {
+  transition: height 0.8s;
+  color: transparent;
+  display: none;
+}
+
+.menu-close {
+  width: 170px;
+  height: 100px;
+  background-color: #f94659;
+  /* color: white; */
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-close {
+  height: 0vh;
+  /* color: transparent; */
+}
+
+@media (max-width: 1100px) {
+  #menu {
+    right: 1%;
+    top: 65%;
+    width: 190px;
+    text-align: right;
+    padding-right: 10px;
+  }
+  .Nav-link {
+    padding-top: 0px;
+  }
+  .drop-down a {
+    width: 0px;
+  }
+  .Drop-down-nav-link {
+    color: white;
+    list-style: none;
+    margin-top: 11px;
+    margin-bottom: 7px;
+    font-weight: bold;
+  }
+  .Nav-links {
+    align-items: center;
+  }
+
+  .Browser-view-links {
+    display: none;
+  }
+  .Responsive-view-links {
+    display: flex;
+    align-items: center;
+  }
+  .menu-open .drop-down {
+    color: white;
+  }
+}
+
 @media (max-width: 800px) {
+  #menu {
+    top: 90%;
+    width: 95%;
+    text-align: center;
+  }
+  .Drop-down-nav-link {
+    width: 100%;
+  }
   .Nav-bar {
     flex-direction: column;
+  }
+  .Nav-link {
+    padding-top: 0px;
   }
   .Nav-links {
     width: 100%;

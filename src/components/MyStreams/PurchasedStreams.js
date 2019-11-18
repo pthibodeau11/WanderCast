@@ -73,7 +73,7 @@ class PurchasedStreams extends Component {
 
             <li className="Mystreams-box-id">{purchase.stream_price}</li>
             <span
-              className="popup-edit-button"
+              className="popup-edit-receipt"
               onClick={() => this.togglePopup(purchase)}
             >
               Receipt
@@ -128,8 +128,8 @@ class PurchasedStreams extends Component {
           <li className="Mystreams-table-id">Hrs</li>
           <li className="Mystreams-table-title">City</li>
           <li className="Mystreams-table-id">Cost</li>
-          <li className="Mystreams-table-id"></li>
-          <li className="Mystreams-table-id"></li>
+          <li className="Mystreams-table-link"></li>
+          <li className="Mystreams-table-link"></li>
         </ul>
         {purchasesMapped}
       </div>

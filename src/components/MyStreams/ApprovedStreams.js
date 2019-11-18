@@ -86,7 +86,7 @@ class ApprovedStreams extends Component {
             <li className="Mystreams-box-id">{approved.stream_hours}</li>
             <li className="Mystreams-box-id">{approved.stream_price}</li>
             <span
-              className="popup-edit-button"
+              className="popup-edit-review"
               onClick={() => this.togglePopup(approved)}
             >
               Review

@@ -84,12 +84,23 @@
   list-style: none;
 }
 
+.Mystreams-table-link {
+  width: 125px;
+  list-style: none;
+  font-weight: bold;
+}
+
+.Mystreams-box-link {
+  width: 125px;
+  list-style: none;
+}
+
 .Mystreams-video {
   justify-content: center;
-  padding-bottom: 32.25%;
+  padding-bottom: 51.25%;
   position: relative;
   display: block;
-  width: 57%;
+  width: 87%;
 }
 
 .Stream-box {
@@ -151,8 +162,49 @@
   cursor: pointer;
 }
 
+.popup-edit-receipt {
+  cursor: pointer;
+  color: #f94659;
+  margin-right: 50px;
+  text-align: center;
+  width: 75px;
+  font-weight: 500;
+}
+
+.popup-edit-review {
+  cursor: pointer;
+  color: #f94659;
+  margin-right: 50px;
+  text-align: center;
+  width: 75px;
+  font-weight: 500;
+}
+
 @media (max-width: 1000px) {
   .Mystreams-background {
     padding-top: 55px;
+  }
+  .Mystreams-box-title {
+    display: none;
+  }
+
+  .Mystreams-box-id {
+    display: none;
+  }
+
+  .Mystreams-table-title {
+    display: none;
+  }
+  .Mystreams-table-id {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .popup-edit-receipt {
+    display: none;
+  }
+  .popup-edit-review {
+    display: none;
   }
 }

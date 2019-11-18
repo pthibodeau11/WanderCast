@@ -83,7 +83,7 @@
     text-align: center;
     align-items: center;
     padding-top: 100px;
-    width: 98%;
+    width: 605px;
     overflow: auto;
   }
   .Main-text h1 {
@@ -100,10 +100,14 @@
 }
 
 @media (max-width: 450px) {
+  .Main-text {
+    width: 307px;
+  }
   .Main-text h1 {
     font-size: 21px;
     margin: 0 15px 0 15px;
     line-height: 24px;
+    margin-bottom: 20px;
   }
   .Main-text p {
     font-size: 14px;

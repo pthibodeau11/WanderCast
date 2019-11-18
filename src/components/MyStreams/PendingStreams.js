@@ -75,7 +75,7 @@ class PendingStreams extends Component {
             </li>
             <li className="Mystreams-box-id">{pending.stream_hours}</li>
             <span
-              className="popup-edit-button"
+              className="popup-edit-review"
               onClick={() => this.togglePopup(pending)}
             >
               Review
@@ -129,10 +129,7 @@ const mapStateToProps = reduxState => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    getPendingStreams,
-    deleteStream
-  }
-)(PendingStreams);
+export default connect(mapStateToProps, {
+  getPendingStreams,
+  deleteStream
+})(PendingStreams);

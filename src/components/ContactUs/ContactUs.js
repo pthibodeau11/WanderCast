@@ -10,7 +10,7 @@ export default class ContactUs extends Component {
     const message = document.getElementById("message").value;
     axios({
       method: "POST",
-      url: "http://localhost:7777/send",
+      url: process.env.REACT_APP_CONTACT,
       data: {
         name: name,
         email: email,

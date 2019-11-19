@@ -29,3 +29,5 @@ emailconfig.js
 /public
 
 /src/firebaseconfig.js
+
+.env.prod

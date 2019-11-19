@@ -30,7 +30,7 @@ class StripePurchase extends Component {
     } = this.props;
     axios({
       method: "POST",
-      url: "http://localhost:7777/checkout",
+      url: process.env.REACT_APP_CHECKOUT,
       data: {
         token: token,
         streamPrice: streamPrice,
@@ -55,7 +55,7 @@ class StripePurchase extends Component {
         });
         axios({
           method: "POST",
-          url: "http://localhost:7777/send/purchase",
+          url: process.env.REACT_APP_PURCHASE,
           data: {
             name: token.card.name,
             email: token.email,

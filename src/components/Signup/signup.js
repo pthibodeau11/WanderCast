@@ -47,7 +47,7 @@ class signup extends Component {
     const email = this.state.user_email;
     axios({
       method: "POST",
-      url: "http://localhost:7777/send/welcome",
+      url: process.env.REACT_APP_WELCOME,
       data: {
         name: name,
         email: email

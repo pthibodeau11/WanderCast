@@ -29,12 +29,16 @@
   top: 27%;
 }
 
+/* .AlterProfile-container label {
+  color: grey;
+} */
+
 .AlterProfile-input {
   text-align: center;
   margin: 5px;
   height: 20px;
   word-wrap: break-word;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   width: 225px;
   border: none;
   align-content: center;
@@ -48,14 +52,15 @@
   padding: 7px;
   color: white;
   background: #f94659;
-  width: 133px;
+  width: 104px;
   max-width: 100%;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
   border: none;
   box-shadow: 5px 5px 5px -5px rgb(0, 0, 0, 0.56);
   cursor: pointer;
+  font-weight: 500;
 }
 
 .AlterProfile-button {
@@ -63,7 +68,7 @@
   padding: 7px;
   color: white;
   background: #f94659;
-  width: 133px;
+  width: 104px;
   max-width: 100%;
   margin: 0 auto;
   font-size: 14px;
@@ -71,11 +76,15 @@
   border: none;
   box-shadow: 5px 5px 5px -5px rgb(0, 0, 0, 0.56);
   cursor: pointer;
+  font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .AlterProfile-submit-buttons {
   display: flex;
   flex-direction: row;
-  width: 927;
+  width: 80%;
   justify-content: space-between;
 }

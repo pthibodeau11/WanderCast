@@ -108,25 +108,23 @@ class newstream extends Component {
       <>
         <div className="Newstream-background">
           <div className="Newstream-container">
-            <h1>New stream request form</h1>
+            <h1>New Stream Request Form</h1>
             <br />
             <br />
             <div className="Newstream-form-main">
               <div className="Newstream-left">
                 <div className="Newstream-field">
-                  <label>Stream request category:</label>
+                  <label>Category:</label>
                   <input name="stream_category" onChange={this.handleInput} />
                 </div>
                 <br />
                 <div className="Newstream-field">
-                  <label>Stream title / brief description of request</label>
-                  <br />
+                  <label>Title / brief description</label>
                   <textarea name="stream_title" onChange={this.handleInput} />
                 </div>
                 <br />
                 <div className="Newstream-field">
-                  <label>Describe your stream request in detail:</label>
-                  <br />
+                  <label>Detailed description:</label>
                   <textarea name="stream_desc" onChange={this.handleInput} />
                 </div>
                 <br />
@@ -154,6 +152,9 @@ class newstream extends Component {
                 {/* <label className="Stream-location-label">
                   Stream location:
                 </label> */}
+                <div className="Newstream-field-select-location">
+                  <label>Select location (up/down arrows to select):</label>
+                </div>
                 <form className="Google-location-search">
                   <input
                     id="autocomplete"
@@ -202,10 +203,10 @@ class newstream extends Component {
             </div>
             <div className="Submit-buttons">
               <button name="request" onClick={this.handleSubmit}>
-                Submit
+                SUBMIT
               </button>
               <Link to="/mystreams">
-                <button>Cancel</button>
+                <button>CANCEL</button>
               </Link>
             </div>
           </div>

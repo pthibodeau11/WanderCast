@@ -1,6 +1,6 @@
 .Newapplication-background {
   width: 100%;
-  height: 700px;
+  height: 1000px;
   position: top;
   margin-top: 30px;
   background-image: url("../../plain_background_landing.jpg");
@@ -13,6 +13,92 @@
   align-items: center;
 }
 
-.Newapplications-container {
+.Newapplication-container {
   z-index: 10000;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 75px;
+  position: absolute;
+  top: 10%;
+}
+
+.Newapplication-form-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Newapplication-left {
+  width: 300px;
+}
+.Newapplication-right {
+  width: 300px;
+}
+
+.Newapplication-field {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  height: 92px;
+  text-align: left;
+}
+
+.Newapplication-field label {
+  font-weight: bold;
+}
+
+.Newapplication-field textarea {
+  width: 290px;
+  resize: none;
+  margin: 5px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid grey;
+}
+
+.Newapplication-field input {
+  text-align: center;
+  margin: 5px;
+  height: 20px;
+  word-wrap: break-word;
+  width: 290px;
+  border: none;
+  align-content: center;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin-top: 10px;
+  background: white;
+}
+
+.Newapplication-submit-buttons {
+  /* position: absolute;
+  bottom: -30%; */
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.Newapplication-submit-buttons button {
+  border-radius: 50px;
+  padding: 7px;
+  color: white;
+  background: #f94659;
+  width: 115px;
+  max-width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  border: none;
+  box-shadow: 5px 5px 5px -5px rgb(0, 0, 0, 0.56);
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .Newapplication-form-main {
+    flex-direction: column;
+    align-items: center;
+  }
 }

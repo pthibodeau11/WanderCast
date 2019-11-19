@@ -31,6 +31,16 @@
   background: transparent;
 }
 
+.Profile-img-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Profile-img-upload label {
+  margin-bottom: 5px;
+}
+
 .Signup-button {
   border-radius: 50px;
   padding: 7px;

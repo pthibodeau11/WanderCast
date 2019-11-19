@@ -109,31 +109,37 @@ class signup extends Component {
             />
             <br />
             <br />
-            <DatePicker
-              selected={this.state.user_birth_date}
-              onChange={this.handleDateChange}
-              peekNextMonth
-              showMonthDropdown
-              showYearDropdown
-              dropdownMode="select"
-              maxDate={new Date()}
-              // yearDropdownItemNumber={50}
-              // dateFormatCalendar="MMMM"
-            />
+            <div className="Profile-img-upload">
+              <label>Birthday: </label>
+              <DatePicker
+                selected={this.state.user_birth_date}
+                onChange={this.handleDateChange}
+                peekNextMonth
+                showMonthDropdown
+                showYearDropdown
+                dropdownMode="select"
+                maxDate={new Date()}
+                // yearDropdownItemNumber={50}
+                // dateFormatCalendar="MMMM"
+              />
+            </div>
             <br />
             <br />
-            <input
-              // placeholder="profile img url"
-              // className="Signup-input"
-              // name="user_profile_img"
-              // placeholder="paste url"
-              // onChange={this.handleInput}
-              className="Signup-input"
-              type="file"
-              name="user_profile_img"
-              placeholder="upload"
-              onChange={this.handleImage}
-            />
+            <div className="Profile-img-upload">
+              <label>Profile img:</label>
+              <input
+                // placeholder="profile img url"
+                // className="Signup-input"
+                // name="user_profile_img"
+                // placeholder="paste url"
+                // onChange={this.handleInput}
+                className="Signup-input"
+                type="file"
+                name="user_profile_img"
+                placeholder="upload"
+                onChange={this.handleImage}
+              />
+            </div>
             <br />
             <br />
             <button
@@ -141,7 +147,7 @@ class signup extends Component {
               name="register"
               onClick={this.handleSubmit}
             >
-              Create account
+              CREATE
             </button>
           </div>
         </div>

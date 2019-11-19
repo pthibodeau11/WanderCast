@@ -6,13 +6,17 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { createPurchase } from "../../redux/Reducers/purchReducer";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
 class StripePurchase extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      redirect: false
+    };
   }
   handleToken = async (token, addresses) => {
     console.log(this.props);
@@ -36,8 +40,8 @@ class StripePurchase extends Component {
       if (response.data.status === "success") {
         toast.success("Success! Check emails for details", {
           type: "success",
-          position: "top-right",
-          autoClose: 5000,
+          position: "bottom-left",
+          autoClose: 25000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -61,6 +65,7 @@ class StripePurchase extends Component {
         }).then(response => {
           if (response.data.msg === "success") {
             alert("Message Sent.");
+            this.setState({ redirect: true });
           } else if (response.data.msg === "fail") {
             alert("Message failed to send.");
           }
@@ -68,7 +73,7 @@ class StripePurchase extends Component {
       } else if (response.data.status === "failure") {
         toast.error("Something went wrong", {
           type: "success",
-          position: "top-right",
+          position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -80,6 +85,7 @@ class StripePurchase extends Component {
     });
   };
   render() {
+    if (this.state.redirect === true) return <Redirect to="/mystreams" />;
     const { streamId, streamPrice, streamTitle } = this.props;
     return (
       <div className="Mystreams-background">

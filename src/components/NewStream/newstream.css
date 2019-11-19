@@ -36,6 +36,19 @@
   text-align: left;
 }
 
+.Newstream-field-select-location {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* height: 92px; */
+  padding-top: 20px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.Newstream-field-select-location label {
+  font-weight: bold;
+}
+
 .Newstream-field label {
   font-weight: bold;
 }
@@ -58,6 +71,7 @@
 .Newstream-field textarea {
   width: 290px;
   resize: none;
+  margin: 5px;
   height: 50px;
   border-radius: 4px;
   border: 1px solid grey;

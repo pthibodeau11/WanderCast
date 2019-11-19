@@ -65,28 +65,29 @@ class AlterProfile extends Component {
             <h1>Edit Profile</h1>
             {/* <label>Enter New First Name:</label> */}
             <input
-              placeholder="enter new first name"
+              placeholder="new first name"
               className="AlterProfile-input"
               name="user_first_name"
               onChange={this.handleInput}
             />
             {/* <label>Enter New Last Name:</label> */}
             <input
-              placeholder="enter new last name"
+              placeholder="new last name"
               className="AlterProfile-input"
               name="user_last_name"
               onChange={this.handleInput}
             />
             {/* <label>Enter New Birth Date</label> */}
             <input
-              placeholder="enter new birth date"
+              placeholder="new birth date yyyy-mm-dd"
               className="AlterProfile-input"
               name="user_birth_date"
               onChange={this.handleInput}
             />
+            <br />
             <label>Upload New Profile Image</label>
             <label for="file-upload" className="Custom-file-upload">
-              Browse
+              BROWSE
             </label>
             <br />
             <br />
@@ -104,11 +105,11 @@ class AlterProfile extends Component {
                   className="AlterProfile-button"
                   onClick={this.handleEditSubmit}
                 >
-                  Submit
+                  SUBMIT
                 </button>
               </Link>
               <Link to="/profile">
-                <button className="AlterProfile-button">Cancel</button>
+                <button className="AlterProfile-button">CANCEL</button>
               </Link>
             </div>
           </div>

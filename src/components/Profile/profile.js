@@ -61,7 +61,7 @@ class profile extends Component {
               </div>
               <div className="Edit-button-box">
                 <Link to="/profile/edit">
-                  <button className="Edit-button">Edit info</button>
+                  <button className="Edit-button">EDIT</button>
                 </Link>
               </div>
             </div>

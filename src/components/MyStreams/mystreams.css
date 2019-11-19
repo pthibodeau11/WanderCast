@@ -1,6 +1,6 @@
 .Mystreams-background {
   width: 100%;
-  height: 1000px;
+  height: 900px;
   margin-top: 30px;
   background-image: url("../../plain_background_landing.jpg");
   background-repeat: no-repeat;
@@ -44,19 +44,21 @@
 }
 
 .Mystreams-table {
-  width: 95%;
+  width: 92%;
   display: flex;
   flex-direction: row;
   text-align: left;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 0;
+  padding-bottom: 2px;
 }
 
 .Mystreams-box {
-  width: 95%;
+  width: 92%;
   display: flex;
   flex-direction: row;
   text-align: left;
-  justify-content: space-between;
+  justify-content: center;
 }
 .Mystreams-table-column {
   list-style: none;

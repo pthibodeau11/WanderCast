@@ -27,12 +27,14 @@
 .Diff-box h1 {
   margin: 0;
   margin-bottom: 3px;
+  font-size: 23px;
   /* color: #045da5; */
 }
 
 .Diff-box p {
   margin: 0;
   margin-bottom: 3px;
+  font-size: 16px;
   /* color: #045da5; */
 }
 
@@ -75,10 +77,10 @@
   }
 
   .Diff-box h1 {
-    font-size: 22px;
+    font-size: 23px;
   }
   .Diff-box p {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 

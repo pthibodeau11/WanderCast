@@ -21,7 +21,7 @@ export default class ApprovedPopup extends Component {
           </div>
           <div className="popup-body">
             <label>Purchase Price:</label>
-            <li>{this.props.purchasePrice}</li>
+            <li>{this.props.streamPrice}</li>
             <br />
           </div>
           <div>
@@ -59,7 +59,7 @@ export default class ApprovedPopup extends Component {
           </div>
           <div className="popup-body">
             <label>Streamer Equip:</label>
-            <li>{this.props.streamerEquip}</li>
+            <li>{this.props.streamEquip}</li>
             <br />
           </div>
           <div className="popup-body">

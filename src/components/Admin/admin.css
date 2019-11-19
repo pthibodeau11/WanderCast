@@ -17,6 +17,7 @@
   flex-direction: row;
   margin-top: 60px;
   z-index: 10000;
+  padding-top: 65px;
 }
 
 .Admin-header button {

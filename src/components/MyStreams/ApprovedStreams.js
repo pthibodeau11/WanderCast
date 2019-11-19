@@ -106,7 +106,7 @@ class ApprovedStreams extends Component {
                 streamCity={this.state.streamCity}
                 streamState={this.state.streamState}
                 streamZip={this.state.streamZip}
-                purchasePrice={this.state.purchasePrice}
+                streamPrice={this.state.streamPrice}
               />
             ) : null}
             <span

@@ -29,6 +29,8 @@ app.use((request, response, next) => {
   next();
 });
 
+app.use(express.static(`${__dirname}/../build`));
+
 app.use(
   session({
     secret: SESSION_SECRET,

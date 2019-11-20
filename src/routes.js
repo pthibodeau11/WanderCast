@@ -5,7 +5,7 @@ import Signup from "./components/Signup/signup";
 import Login from "./components/Login/login";
 import Profile from "./components/Profile/profile";
 import ContactUs from "./components/ContactUs/ContactUs";
-import AlterProfile from "./components/Profile/AlterProfile";
+import AlterProfile from "./components/Profile/alterprofile";
 import NewApplication from "./components/NewApplication/newapplication";
 import ViewApplication from "./components/ViewApplication/viewapplication";
 import NewStream from "./components/NewStream/newstream";

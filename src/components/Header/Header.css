@@ -232,6 +232,7 @@
   .Main-header-logo {
     margin-left: 45px;
     max-height: 40px;
-    padding-bottom: 15px;
+    padding-top: 14px;
+    padding-bottom: 27px;
   }
 }

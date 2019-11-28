@@ -1,68 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WanderCast 
 
-## Available Scripts
+***"A site for hiring your own personal live-streamer"***
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Overview
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This is a full-stack application created in just over 2 weeks while attending DevMountain. I used React, Redux, Express, Node, and PostgreSQL as the stack for developing the project. In addition, I learned and implemented Stripe, Firebase cloud storage, Nodemailer, and Google places API into the project.
 
-### `npm test`
+## Primary features:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Create a new account (bycrypt for auth) and edit profile
+-   Submit a live-stream request
+-   Edit, delete, purchase, or watch live-streams
+-   Apply to be a live-streamer
+-   Separate admin portal for managing the incoming stream requests and viewing high-level user data
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![enter image description here](https://keep.google.com/u/2/media/v2/1VBZ7QXaoGmhbzQYxWciUIuCY-2NNL_jIZANNvYypajl_VK67YqJ-Z3T7UyqgTrw/1t5ce2Pz71Yrs_o581CrxXyXlEvrUn_5RJBwwmDKXlAxK1MsJojV4SdNHCKuWCIw?accept=image/gif,image/jpeg,image/jpg,image/png,image/webp,audio/aac&sz=680)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ 
+   ![enter image description here](https://keep.google.com/u/2/media/v2/16Gw5mJ3V40aHUR_5P1y6769bSnGvVcFaQ8o8v__dPwg3JPK5tj4jzBLZbJT3VYI/1IVV5TPt-6DXsFLqGeW0GlBfIHegIAY1hDuWGr_fWAxr_fm5uLoJfP7dFxvB7a7E?accept=image/gif,image/jpeg,image/jpg,image/png,image/webp,audio/aac&sz=400)          ![enter image description here](https://keep.google.com/u/2/media/v2/1F83kLlRsyzJlbqVjf8h3EElqMPijkFsVq-1iwnUwxLKUXlYkQRpX2wVzv6dncuE/1v1WAj--C03XOrQe4W9sjFT_AWrPM_dv_tRNpV43boRIry1jI8OWOyeFLoOIWKg?accept=image/gif,image/jpeg,image/jpg,image/png,image/webp,audio/aac&sz=400)   ![enter image description here](https://keep.google.com/u/2/media/v2/1qDVA0mzlvqmsULtNilPy-jy35Xrg55xtjnEr2wIrsweQAre_b1boIgtl6fYv-gU/1MAguau5ZwFo4CLmttX0AHI-fYN9S2raq6RAMOPIy8JTTerhLYCyn6inyYuHSgQ?accept=image/gif,image/jpeg,image/jpg,image/png,image/webp,audio/aac&sz=400)

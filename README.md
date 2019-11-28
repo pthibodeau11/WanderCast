@@ -18,7 +18,7 @@ This is a full-stack application created in just over 2 weeks while attending De
 
 
 
-![enter image description here](https://keep.google.com/u/2/media/v2/1VBZ7QXaoGmhbzQYxWciUIuCY-2NNL_jIZANNvYypajl_VK67YqJ-Z3T7UyqgTrw/1t5ce2Pz71Yrs_o581CrxXyXlEvrUn_5RJBwwmDKXlAxK1MsJojV4SdNHCKuWCIw?accept=image/gif,image/jpeg,image/jpg,image/png,image/webp,audio/aac&sz=680)
+![landing page](https://lh4.googleusercontent.com/KD_3tBGMKceNjwXmorwcDyiD4L3iGCUykV29kskbcwhK18QAsPYPfkBEraMLcSiNlp6w_Y6KYrcPhelqv0h7w1h_2-u2XAQK0GAQHZN5=s1433)
 
 
  

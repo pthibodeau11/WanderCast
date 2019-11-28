@@ -2,9 +2,15 @@
 
 ***"A site for hiring your own personal live-streamer"***
 
+## About
 
+See the world, attend a live event, or wander a museum through the eyes (well, camera) of your own live-streamer. Simply make a request, and our team will send a streamer the location of your choice.
 
-## Overview
+- **Go anywhere** Our streamers aren't attached to their desktops at home.
+- **Private** Our live-streams are private and password protected between you and the streamer.
+- **High-quality** Our streamers have been vetted to provide high-quality streams.
+
+## Tech Overview
 
 This is a full-stack application created in just over 2 weeks while attending DevMountain. I used React, Redux, Express, Node, and PostgreSQL as the stack for developing the project. In addition, I learned and implemented Stripe, Firebase cloud storage, Nodemailer, and Google places API into the project.
 

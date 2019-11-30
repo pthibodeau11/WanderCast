@@ -26,9 +26,9 @@ This is a full-stack application created in just over 2 weeks while attending De
 -   Apply to be a live-streamer
 -   Separate admin portal for managing the incoming stream requests and viewing high-level user data
 <p align="center">
-<img src="https://github.com/pthibodeau11/images/blob/master/mobile%20(1).jpg?raw=true" width=256 /> 
-<img src="https://github.com/pthibodeau11/images/blob/master/mobile%20(2).jpg?raw=true" width=256 /> 
-<img src="https://github.com/pthibodeau11/images/blob/master/mobile(3).jpg?raw=true" width=256 />
+<img src="https://github.com/pthibodeau11/images/blob/master/mobile%20(1).jpg?raw=true" width=285 /> 
+<img src="https://github.com/pthibodeau11/images/blob/master/mobile%20(2).jpg?raw=true" width=285 /> 
+<img src="https://github.com/pthibodeau11/images/blob/master/mobile(3).jpg?raw=true" width=285 />
  </p>
 
 ![enter image description here](https://github.com/pthibodeau11/images/blob/master/stream3.png?raw=true)

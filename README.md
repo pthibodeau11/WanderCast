@@ -2,7 +2,9 @@
 
 ***"A site for hiring your own personal live-streamer"***
 
-![landing page](https://lh4.googleusercontent.com/KD_3tBGMKceNjwXmorwcDyiD4L3iGCUykV29kskbcwhK18QAsPYPfkBEraMLcSiNlp6w_Y6KYrcPhelqv0h7w1h_2-u2XAQK0GAQHZN5=s1433)
+LIVE SITE ---> [WanderCast](http://wandercast.co:7777/#/)
+
+![landing page](https://github.com/pthibodeau11/images/blob/master/main.png?raw=true)
 
 ## About
 

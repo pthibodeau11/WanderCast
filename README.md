@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WanderCast 
 
-## Available Scripts
+***"A site for hiring your own personal live-streamer"***
 
-In the project directory, you can run:
+LIVE SITE ---> [WanderCast](http://wandercast.co:7777/#/)
 
-### `npm start`
+![landing page](https://github.com/pthibodeau11/images/blob/master/main.png?raw=true)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+See the world, attend a live event, or wander a museum through the eyes (well, camera) of your own live-streamer. Simply make a request, and our team will send a streamer the location of your choice.
 
-### `npm test`
+- **Go anywhere** Our streamers aren't attached to their desktops at home.
+- **Private** Our live-streams are private and password protected between you and the streamer.
+- **High-quality** Our streamers have been vetted to provide high-quality streams.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Overview
 
-### `npm run build`
+This is a full-stack application created in just over 2 weeks while attending DevMountain. I used React, Redux, Express, Node, and PostgreSQL as the stack for developing the project. In addition, I learned and implemented Stripe, Firebase cloud storage, Nodemailer, and Google places API into the project.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Primary features:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+-   Create a new account (bycrypt for auth) and edit profile
+-   Submit a live-stream request
+-   Edit, delete, purchase, or watch live-streams
+-   Apply to be a live-streamer
+-   Separate admin portal for managing the incoming stream requests and viewing high-level user data
+<p align="center">
+<img src="https://github.com/pthibodeau11/images/blob/master/mobile%20(1).jpg?raw=true" width=285 /> 
+<img src="https://github.com/pthibodeau11/images/blob/master/mobile%20(2).jpg?raw=true" width=285 /> 
+<img src="https://github.com/pthibodeau11/images/blob/master/mobile(3).jpg?raw=true" width=285 />
+ </p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![enter image description here](https://github.com/pthibodeau11/images/blob/master/stream3.png?raw=true)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

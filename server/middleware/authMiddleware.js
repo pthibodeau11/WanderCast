@@ -7,7 +7,6 @@ module.exports = {
     next();
   },
   adminsOnly: (req, res, next) => {
-    console.log(req.session.user);
     if (!req.session.user.isAdmin) {
       return res.status(403).send("You are not an admin");
     }

@@ -15,7 +15,6 @@ module.exports = {
   },
   viewProfile: async (req, res) => {
     const { userId } = req.session.user;
-    console.log(userId);
     const oneUser = await req.app.get("db").users.get_one_user(userId);
 
     return res.status(200).send(oneUser);

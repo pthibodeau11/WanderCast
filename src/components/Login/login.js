@@ -15,7 +15,6 @@ class login extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.user_email);
     this.props.loginUser({
       user_email: this.state.user_email,
       user_password: this.state.user_password

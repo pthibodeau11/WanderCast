@@ -11,7 +11,7 @@ class PurchasedStreams extends Component {
   constructor() {
     super();
     this.state = {
-      videoLink: "",
+      videoLink: 1524,
       showPopup: false,
       streamId: "",
       streamTitle: "",
@@ -30,8 +30,6 @@ class PurchasedStreams extends Component {
   }
 
   togglePopup = e => {
-    console.log(e);
-    console.log(e.stream_id);
     this.setState({
       showPopup: !this.state.showPopup,
       streamId: e.stream_id,
@@ -47,12 +45,10 @@ class PurchasedStreams extends Component {
   };
 
   watchStream = e => {
-    console.log(e);
     this.setState({ videoLink: e });
   };
 
   render() {
-    console.log(this.state.videoLink);
     const purchasesMapped =
       this.props.purchases &&
       this.props.purchases.map(purchase => {
@@ -103,11 +99,11 @@ class PurchasedStreams extends Component {
       });
     return (
       <div className="Mystreams-mappedlist">
-        {/* <h2>My Purchased Streams</h2> */}
+        <h2>** TWiT.tv - for demo purposes **</h2>
         <div className="Mystreams-video">
           <Iframe
             className="Stream-box"
-            url={`https://video.ibm.com/embed/${this.state.videoLink}?videos=0`}
+            url={`https://ustream.tv/embed/${this.state.videoLink}?videos=0`}
             styles={{ border: "1px black" }}
             webkitallowfullscreen
             allowfullscreen

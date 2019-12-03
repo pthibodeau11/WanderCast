@@ -33,14 +33,9 @@ class ApprovedStreams extends Component {
       streamTitle: e.stream_title,
       streamerId: e.streamer_id
     });
-    console.log(e);
-    console.log(this.state.streamPrice);
     this.setState({ purchasing: "purchasing" });
-    console.log(this.state.purchasing);
   };
   togglePopup = e => {
-    console.log(e);
-    console.log(e.stream_id);
     this.setState({
       showPopup: !this.state.showPopup,
       streamId: e.stream_id,

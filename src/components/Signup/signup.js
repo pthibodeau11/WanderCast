@@ -61,7 +61,6 @@ class signup extends Component {
     });
   };
   render() {
-    console.log(this.props.userId);
     if (this.props.userId) return <Redirect to="/" />;
 
     return (

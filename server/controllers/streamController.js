@@ -91,7 +91,6 @@ module.exports = {
     const pendingStreams = await req.app
       .get("db")
       .streams.get_pending_streams(streamId);
-    console.log(pendingStreams);
     res.status(200).json(pendingStreams);
   },
   adminEditPendingStream: async (req, res) => {
@@ -116,7 +115,6 @@ module.exports = {
     const pendingStreams = await req.app
       .get("db")
       .streams.get_pending_streams(streamId);
-    console.log(pendingStreams);
     res.status(200).json(pendingStreams);
   },
   deleteStream: async (req, res) => {

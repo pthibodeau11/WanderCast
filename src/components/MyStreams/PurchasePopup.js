@@ -8,13 +8,9 @@ class PurchasePopup extends Component {
     super(props);
     this.state = {};
   }
-  //   componentDidMount() {
-  //     this.props.getUserPurchase(this.props.streamId);
-  //     console.log(this.props);
-  //   }
+
   render() {
-    // const purchases = this.props && this.props;
-    // console.log(this.props.getUserPurchase(this.props.streamId));
+
     return (
       <div className="popup">
         <div className="popup-inner">

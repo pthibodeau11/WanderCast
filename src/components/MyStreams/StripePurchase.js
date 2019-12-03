@@ -19,8 +19,6 @@ class StripePurchase extends Component {
     };
   }
   handleToken = async (token, addresses) => {
-    console.log(this.props);
-    console.log(token);
     const {
       streamPrice,
       streamTitle,
@@ -81,7 +79,6 @@ class StripePurchase extends Component {
           draggable: true
         });
       }
-      console.log(response);
     });
   };
   render() {

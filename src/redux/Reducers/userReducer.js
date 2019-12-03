@@ -67,13 +67,11 @@ export default function reducer(state = initialState, action) {
         user: payload.data
       };
     case `${VIEW_PROFILE}_FULFILLED`:
-      console.log(payload);
       return {
         ...state,
         user: payload.data
       };
     case `${EDIT_PROFILE}_FULFILLED`:
-      console.log(payload);
       return {
         ...state,
         user: payload.data

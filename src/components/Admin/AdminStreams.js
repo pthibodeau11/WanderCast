@@ -19,12 +19,9 @@ class AdminStreams extends Component {
   }
   componentDidMount() {
     this.props.getAllStreams();
-    console.log(this.props);
   }
 
   togglePopup = e => {
-    console.log(e);
-    // console.log(e.stream_id);
     this.setState({
       showPopup: !this.state.showPopup
     });
@@ -38,9 +35,6 @@ class AdminStreams extends Component {
   };
 
   render() {
-    console.log(this.props.streams);
-    console.log(this.props.streams.pending);
-    console.log(this.props.pending);
     const streamsMapped = this.props.streams.map(stream => {
       return (
         <ul className="Admin-box">

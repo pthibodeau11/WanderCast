@@ -51,7 +51,6 @@ class newstream extends Component {
   handlePlaceSelect = () => {
     let addressObject = this.autocomplete.getPlace();
     let address = addressObject.address_components;
-    console.log(address);
     try {
       this.setState({
         stream_name: addressObject.name,
@@ -63,13 +62,9 @@ class newstream extends Component {
         googleMapLink: addressObject.url
       });
     } catch (e) {
-      console.log(e);
       alert("Whoops! Please enter a specific address");
     }
-    // .catch(error => {
-    //   alert("Whoops! Please select an exact address");
-    //   console.log(error);
-    // });
+
   };
 
   handleSubmit = e => {

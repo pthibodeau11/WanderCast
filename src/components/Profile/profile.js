@@ -11,8 +11,6 @@ class profile extends Component {
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.props.user[0] && this.props.user[0].isstreamer);
     let streamer = "";
     if (!(this.props.user[0] && this.props.user[0].isstreamer)) {
       streamer = "Apply to be Streamer";

@@ -19,7 +19,6 @@ export function registerUser(userInfo) {
 }
 
 export function loginUser(userInfo) {
-  console.log(userInfo);
   return {
     type: LOGIN_USER,
     payload: axios.post("/auth/user/login", userInfo)
@@ -38,7 +37,6 @@ export default function reducer(state = initialState, action) {
 
   switch (type) {
     case `${REGISTER_USER}_FULFILLED`:
-      console.log(payload);
       return {
         userId: payload.data.userId,
         userFirstName: payload.data.userFirstName,
@@ -46,7 +44,6 @@ export default function reducer(state = initialState, action) {
         isAdmin: payload.data.isAdmin
       };
     case `${LOGIN_USER}_FULFILLED`:
-      console.log(payload);
       return {
         userId: payload.data.userId,
         userFirstName: payload.data.userFirstName,

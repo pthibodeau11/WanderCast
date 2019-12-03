@@ -29,7 +29,6 @@ class Header extends React.Component {
   render() {
     const { userId } = this.props;
     const { isAdmin } = this.props;
-    console.log(this.props);
     return (
       <div className="Nav-bar">
         {/* <div className="Search-bar">

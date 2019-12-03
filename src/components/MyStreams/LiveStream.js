@@ -7,7 +7,6 @@ export default class LiveStream extends Component {
     videoLink: this.props.streamId
   };
   render() {
-    // console.log(videoLink);
     return (
       <div>
         <Iframe

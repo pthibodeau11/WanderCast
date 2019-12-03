@@ -55,7 +55,6 @@ module.exports = {
         user_password,
         foundUser[0].hash
       );
-      console.log(foundUser);
 
       if (!isAuthenticated) {
         res.status(403).json({ message: "Incorrect password" });

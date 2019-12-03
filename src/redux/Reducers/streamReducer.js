@@ -98,9 +98,7 @@ export default function reducer(state = initialState, action) {
       };
     case `${EDIT_PENDING_STREAM}_FULFILLED`:
       let newStreams = { ...state.streams };
-      console.log(newStreams);
       newStreams.pending = payload.data;
-      console.log(newStreams);
 
       return {
         ...state,
@@ -108,9 +106,7 @@ export default function reducer(state = initialState, action) {
       };
     case `${ADMIN_EDIT_PENDING_STREAM}_FULFILLED`:
       let adminNewStreams = { ...state.streams };
-      console.log(adminNewStreams);
       adminNewStreams.pending = payload.data;
-      console.log(adminNewStreams);
 
       return {
         ...state

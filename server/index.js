@@ -187,7 +187,7 @@ app.post("/send/purchase", (req, res, next) => {
     subject: "Thank you for your purchase!",
     text: `Thank you ${name} for your business! 
     This email confirms that you purchased ${title} for a total $${price} usd. 
-    Thank you. This is definitely not a scam :)`
+    Thank you.`
   };
 
   transporter.sendMail(mail, (err, data) => {

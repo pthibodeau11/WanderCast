@@ -29,19 +29,15 @@ class PendingStreams extends Component {
   }
   componentDidMount() {
     this.props.getPendingStreams();
-    // console.log(this.props.pending[0].stream_id);
   }
 
   handleDelete = async e => {
     await this.setState({ streamId: e });
-    console.log(this.state.streamId);
     await this.props.deleteStream(this.state.streamId);
     this.props.getPendingStreams();
   };
 
   togglePopup = e => {
-    console.log(e);
-    // console.log(e.stream_id);
     this.setState({
       showPopup: !this.state.showPopup,
       streamId: e.stream_id,

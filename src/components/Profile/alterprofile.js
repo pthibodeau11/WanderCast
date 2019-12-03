@@ -18,7 +18,6 @@ class AlterProfile extends Component {
 
   componentDidMount() {
     this.props.viewProfile();
-    console.log(this.props);
   }
 
   handleInput = e => {

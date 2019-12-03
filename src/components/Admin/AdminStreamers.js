@@ -6,7 +6,6 @@ import { getAllStreamers } from "../../redux/Reducers/userReducer";
 class AdminStreamers extends Component {
   componentDidMount() {
     this.props.getAllStreamers();
-    console.log(this.props);
   }
   render() {
     const streamersMapped =
